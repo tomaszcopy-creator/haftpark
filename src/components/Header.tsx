@@ -61,14 +61,14 @@ const Header = () => {
         <nav className="border-t border-border bg-background px-6 pb-6 pt-4 md:hidden">
           <div className="flex flex-col gap-4">
             {navLinks.map((l) => (
-              <a
+              <NavLink
                 key={l.href}
                 href={l.href}
                 onClick={() => setMobileOpen(false)}
                 className="text-base font-medium text-foreground/80 transition-colors hover:text-primary"
               >
                 {l.label}
-              </a>
+              </NavLink>
             ))}
             <Button asChild className="mt-2 gap-2">
               <a href="tel:+48510751008">
