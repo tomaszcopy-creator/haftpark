@@ -25,7 +25,7 @@ const Header = () => {
             alt="Haft Park - Profesjonalny Haft Komputerowy"
             className="h-12 w-auto md:h-14"
           />
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-8 md:flex">
