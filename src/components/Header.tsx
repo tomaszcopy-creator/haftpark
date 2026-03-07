@@ -30,13 +30,13 @@ const Header = () => {
         {/* Desktop nav */}
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((l) => (
-            <a
+            <NavLink
               key={l.href}
               href={l.href}
               className="text-sm font-medium tracking-wide text-foreground/80 transition-colors hover:text-primary"
             >
               {l.label}
-            </a>
+            </NavLink>
           ))}
           <Button asChild size="sm" className="gap-2">
             <a href="tel:+48510751008">
