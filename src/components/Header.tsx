@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import NavLink from "@/components/NavLink";
 
 const navLinks = [
   { label: "Realizacje", href: "/realizacje" },
