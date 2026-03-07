@@ -1,0 +1,33 @@
+const Footer = () => {
+  return (
+    <footer className="border-t border-border bg-foreground py-10 text-primary-foreground">
+      <div className="container">
+        <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
+          <div className="flex items-center gap-3">
+            <img
+              src="/logo-haft-park.jpg"
+              alt="Haft Park"
+              className="h-8 w-auto brightness-0 invert"
+            />
+          </div>
+
+          <div className="text-center text-sm text-primary-foreground/60 md:text-right">
+            <p>ul. Parkowa 36, 42-300 Myszków</p>
+            <p>
+              Tel:{" "}
+              <a href="tel:+48510751008" className="transition-colors hover:text-primary-foreground">
+                +48 510 751 008
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-8 border-t border-primary-foreground/10 pt-6 text-center text-xs text-primary-foreground/40">
+          © {new Date().getFullYear()} Haft Park. Wszelkie prawa zastrzeżone.
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
