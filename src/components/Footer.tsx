@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className="border-t border-border bg-foreground py-10 text-primary-foreground">
@@ -7,7 +9,7 @@ const Footer = () => {
             <img
               src="/logo-haft-park.jpg"
               alt="Haft Park"
-              className="h-8 w-auto brightness-0 invert"
+              className="h-10 w-auto brightness-0 invert"
             />
           </div>
 
@@ -22,8 +24,18 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-primary-foreground/10 pt-6 text-center text-xs text-primary-foreground/40">
-          © {new Date().getFullYear()} Haft Park. Wszelkie prawa zastrzeżone.
+        <div className="mt-8 flex flex-col items-center gap-4 border-t border-primary-foreground/10 pt-6">
+          <div className="flex gap-6 text-xs text-primary-foreground/60">
+            <Link to="/regulamin" className="transition-colors hover:text-primary-foreground">
+              Regulamin
+            </Link>
+            <Link to="/polityka-prywatnosci" className="transition-colors hover:text-primary-foreground">
+              Polityka prywatności
+            </Link>
+          </div>
+          <p className="text-xs text-primary-foreground/40">
+            © {new Date().getFullYear()} Haft Park. Wszelkie prawa zastrzeżone.
+          </p>
         </div>
       </div>
     </footer>
