@@ -14,18 +14,20 @@ import r7 from "@/assets/realizacje/realizacja-7.jpg";
 import r8 from "@/assets/realizacje/realizacja-8.webp";
 import r9 from "@/assets/realizacje/realizacja-9.webp";
 import r10 from "@/assets/realizacje/realizacja-10.webp";
+import r11 from "@/assets/realizacje/realizacja-11.jpg";
 
 const gallery = [
-  { src: r1, alt: "Haft – litery na różowym tle" },
-  { src: r2, alt: "Haft – buldog" },
-  { src: r3, alt: "Haft – mrówka MM93" },
-  { src: r4, alt: "Haft – postać z kwiatami" },
-  { src: r5, alt: "Haft – Joker napis" },
-  { src: r6, alt: "Haft – Kosa motocykle" },
-  { src: r7, alt: "Haft – Plicha logo" },
-  { src: r8, alt: "Haft – For Animals naszywka" },
-  { src: r9, alt: "Haft – Helenówka napis" },
-  { src: r10, alt: "Haft – Joker komiks" },
+  { src: r1, alt: "Haft – litery na różowym tle", rotate: 180 },
+  { src: r2, alt: "Haft – buldog", rotate: 0 },
+  { src: r3, alt: "Haft – mrówka MM93", rotate: 0 },
+  { src: r4, alt: "Haft – postać z kwiatami", rotate: 0 },
+  { src: r5, alt: "Haft – Joker napis", rotate: 0 },
+  { src: r6, alt: "Haft – Kosa motocykle", rotate: 0 },
+  { src: r7, alt: "Haft – Plicha logo", rotate: 0 },
+  { src: r8, alt: "Haft – For Animals naszywka", rotate: 0 },
+  { src: r9, alt: "Haft – Helenówka napis", rotate: 180 },
+  { src: r10, alt: "Haft – Joker komiks", rotate: 0 },
+  { src: r11, alt: "Haft – Montessori Pre-School", rotate: 0 },
 ];
 
 const Realizacje = () => {
