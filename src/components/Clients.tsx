@@ -14,6 +14,9 @@ const clients = [
   { src: loriz, alt: "Loriz Tyre Warmers", name: "Loriz Tyre Warmers" },
 ];
 
+// Double the array for seamless infinite scroll
+const duplicated = [...clients, ...clients];
+
 const Clients = () => {
   return (
     <section className="border-t border-border/40 bg-muted/30 py-16 md:py-24">
@@ -32,23 +35,26 @@ const Clients = () => {
             Współpracujemy z najlepszymi
           </h2>
         </motion.div>
+      </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-14">
-          {clients.map((client, i) => (
-            <motion.div
-              key={client.name}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="group flex h-20 w-36 items-center justify-center grayscale transition-all duration-300 hover:grayscale-0 md:h-24 md:w-44"
+      {/* Infinite scroll marquee */}
+      <div className="relative overflow-hidden">
+        {/* Fade edges */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-muted/30 to-transparent md:w-32" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-muted/30 to-transparent md:w-32" />
+
+        <div className="flex w-max animate-[marquee_25s_linear_infinite] items-center gap-12 hover:[animation-play-state:paused] md:gap-20">
+          {duplicated.map((client, i) => (
+            <div
+              key={`${client.name}-${i}`}
+              className="flex h-16 w-32 shrink-0 items-center justify-center md:h-20 md:w-40"
             >
               <img
                 src={client.src}
                 alt={client.alt}
-                className="max-h-full max-w-full object-contain opacity-70 transition-opacity duration-300 group-hover:opacity-100"
+                className="max-h-full max-w-full object-contain mix-blend-multiply dark:mix-blend-screen"
               />
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
