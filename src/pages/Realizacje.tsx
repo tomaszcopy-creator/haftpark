@@ -60,6 +60,7 @@ const Realizacje = () => {
                   src={item.src}
                   alt={item.alt}
                   className="w-full object-cover transition-transform duration-300 hover:scale-105"
+                  style={item.rotate ? { transform: `rotate(${item.rotate}deg)` } : undefined}
                   loading="lazy"
                 />
               </motion.div>
