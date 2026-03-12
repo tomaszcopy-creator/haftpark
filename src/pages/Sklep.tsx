@@ -16,13 +16,13 @@ const products = [
     name: "Bluza Boxy",
     image: bluzaBoxy,
     price: "150 zł",
-    description: "Ze sznurkami i kieszenią",
+    description: "Bez sznurków i kieszeni",
   },
   {
     name: "Bluza Baggy",
     image: bluzaBaggy,
     price: "160 zł",
-    description: "Bez sznurków i kieszeni",
+    description: "Ze sznurkami i kieszenią",
   },
 ];
 
