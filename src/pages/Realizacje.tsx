@@ -92,6 +92,7 @@ const Realizacje = () => {
               src={gallery[selected].src}
               alt={gallery[selected].alt}
               className="max-h-[85vh] max-w-[90vw] rounded-lg object-contain"
+              style={gallery[selected].rotate ? { transform: `rotate(${gallery[selected].rotate}deg)` } : undefined}
               onClick={(e) => e.stopPropagation()}
             />
           </motion.div>
