@@ -4,6 +4,7 @@ import Stats from "@/components/Stats";
 import ProblemSolution from "@/components/ProblemSolution";
 import Process from "@/components/Process";
 import WhyUs from "@/components/WhyUs";
+import Clients from "@/components/Clients";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
