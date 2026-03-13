@@ -1,27 +1,35 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { MessageSquare, Cpu, Eye, Scissors } from "lucide-react";
+import konsultacjaImg from "@/assets/process/konsultacja.webp";
+import digitalizacjaImg from "@/assets/process/digitalizacja.webp";
+import akceptacjaImg from "@/assets/process/akceptacja.webp";
+import realizacjaImg from "@/assets/process/realizacja.webp";
 
 const steps = [
   {
     icon: MessageSquare,
     title: "Konsultacja",
     desc: "Omawiamy Twoje potrzeby i dobieramy najlepsze rozwiązanie.",
+    image: konsultacjaImg,
   },
   {
     icon: Cpu,
     title: "Digitalizacja",
     desc: "Tworzenie cyfrowego wzoru haftu z Twojego projektu graficznego.",
+    image: digitalizacjaImg,
   },
   {
     icon: Eye,
     title: "Akceptacja",
     desc: "Przedstawiamy wizualizację do zatwierdzenia przed produkcją.",
+    image: akceptacjaImg,
   },
   {
     icon: Scissors,
     title: "Realizacja",
     desc: "Precyzyjne haftowanie z kontrolą jakości każdego elementu.",
+    image: realizacjaImg,
   },
 ];
 
@@ -56,16 +64,27 @@ const Process = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
-              className="relative rounded-lg border border-border bg-card p-6 text-center"
+              className="group relative overflow-hidden rounded-lg border border-border bg-card text-center"
             >
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                <step.icon className="h-6 w-6 text-primary" />
+              {/* Step image */}
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={step.image}
+                  alt={step.title}
+                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
               </div>
-              <span className="mb-2 block text-xs font-bold uppercase tracking-wider text-primary">
-                Krok {i + 1}
-              </span>
-              <h3 className="mb-2 text-lg font-semibold text-foreground">{step.title}</h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
+
+              <div className="p-6">
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                  <step.icon className="h-6 w-6 text-primary" />
+                </div>
+                <span className="mb-2 block text-xs font-bold uppercase tracking-wider text-primary">
+                  Krok {i + 1}
+                </span>
+                <h3 className="mb-2 text-lg font-semibold text-foreground">{step.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
+              </div>
             </motion.div>
           ))}
         </div>

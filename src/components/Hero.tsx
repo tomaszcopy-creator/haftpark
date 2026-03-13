@@ -1,14 +1,25 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
+import heroCollage from "@/assets/hero-collage.webp";
 
 const Hero = () => {
   return (
     <section className="relative flex min-h-[85vh] items-center overflow-hidden bg-background">
+      {/* Background collage */}
+      <div className="absolute inset-0">
+        <img
+          src={heroCollage}
+          alt="Kolaż realizacji haftu komputerowego"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-background/85" />
+      </div>
+
       {/* Subtle accent line */}
       <div className="absolute left-0 top-0 h-1 w-full bg-primary/20" />
 
-      <div className="container py-20 md:py-32">
+      <div className="container relative z-10 py-20 md:py-32">
         <div className="mx-auto max-w-3xl text-center">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -70,7 +81,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
       >
         <a href="#stats" aria-label="Przewiń niżej">
           <ArrowDown className="h-5 w-5 animate-bounce text-muted-foreground" />
