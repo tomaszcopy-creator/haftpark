@@ -10,8 +10,8 @@ const features = [
   },
   {
     icon: Package,
-    title: "Od 6 sztuk",
-    desc: "Minimalne zamówienie już od 6 sztuk. Idealne dla małych i dużych serii.",
+    title: "Już od 1 sztuki",
+    desc: "Realizujemy zamówienia od pojedynczych sztuk po duże serie hurtowe — bez minimalnego progu.",
   },
   {
     icon: Monitor,

@@ -32,7 +32,7 @@ const Regulamin = () => {
             <p>
               Usługodawca świadczy usługi haftu komputerowego, w tym digitalizację projektów,
               przygotowanie wizualizacji oraz realizację haftu na odzieży i tekstyliach.
-              Minimalne zamówienie wynosi 6 sztuk.
+              Zamówienia realizowane są już od 1 sztuki.
             </p>
           </section>
 
