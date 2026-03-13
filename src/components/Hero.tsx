@@ -60,7 +60,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="mt-10 text-sm text-muted-foreground"
           >
-            Dla agencji reklamowych, marek odzieżowych i&nbsp;lokalnych firm
+            Dla firm, agencji reklamowych, marek odzieżowych i&nbsp;klientów indywidualnych
           </motion.p>
         </div>
       </div>

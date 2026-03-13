@@ -6,12 +6,14 @@ const problems = [
   "Opóźnienia w realizacji zamówień",
   "Niska jakość haftu i blaknące kolory",
   "Brak komunikacji i podglądu projektu",
+  "Wysokie minimum zamówienia — brak opcji dla małych zleceń",
 ];
 
 const solutions = [
   "Terminowa realizacja — bez opóźnień",
   "Nici Madeira i Ariadna — trwałość i precyzja",
   "Cyfrowa wizualizacja przed produkcją",
+  "Przyjmujemy zlecenia już od 1 sztuki",
 ];
 
 const ProblemSolution = () => {
