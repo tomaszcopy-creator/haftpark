@@ -170,7 +170,7 @@ const Contact = () => {
               <div>
                 <h4 className="font-semibold text-foreground">Godziny otwarcia</h4>
                 <p className="text-muted-foreground">
-                  Poniedziałek – Piątek: 08:00 – 16:00
+                  Poniedziałek – Piątek: 08:00 – 20:00
                   <br />
                   Sobota – Niedziela: zamknięte
                 </p>
