@@ -36,8 +36,8 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mx-auto mb-8 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl"
           >
-            Szybko. Precyzyjnie. Z klasą. Haftuj logo swojej firmy na odzieży
-            — z&nbsp;pomocą doświadczonego zespołu.
+            Szybko. Precyzyjnie. Z klasą. Haftuj logo na odzieży
+            — od&nbsp;1&nbsp;sztuki po serie hurtowe. Z&nbsp;pomocą doświadczonego zespołu.
           </motion.p>
 
           <motion.div
@@ -60,7 +60,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="mt-10 text-sm text-muted-foreground"
           >
-            Dla agencji reklamowych, marek odzieżowych i&nbsp;lokalnych firm
+            Dla firm, agencji reklamowych, marek odzieżowych i&nbsp;klientów indywidualnych
           </motion.p>
         </div>
       </div>
