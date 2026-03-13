@@ -10,7 +10,7 @@ import { useRef } from "react";
 const faqs = [
   {
     q: "Jakie jest minimalne zamówienie?",
-    a: "Minimalne zamówienie to 6 sztuk. Dzięki temu możemy zaoferować konkurencyjną cenę nawet przy niewielkich seriach.",
+    a: "Nie ma minimalnego zamówienia — realizujemy zlecenia już od 1 sztuki. Obsługujemy zarówno klientów indywidualnych, jak i duże serie hurtowe.",
   },
   {
     q: "Ile trwa realizacja zamówienia?",
