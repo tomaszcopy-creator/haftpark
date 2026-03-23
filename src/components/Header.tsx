@@ -23,7 +23,7 @@ const Header = () => {
           <img
             src="/logo-haft-park.jpg"
             alt="Haft Park - Profesjonalny Haft Komputerowy"
-            className="h-20 w-auto md:h-24"
+            className="h-14 w-auto md:h-16 object-cover object-top"
           />
         </Link>
 
