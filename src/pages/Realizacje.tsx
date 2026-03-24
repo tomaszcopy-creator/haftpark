@@ -16,16 +16,16 @@ import img8473 from "@/assets/realizacje/IMG_8473.webp";
 import img6381 from "@/assets/realizacje/IMG_6381.webp";
 
 const gallery = [
-  { src: ewcia, alt: "Haft na bluzie — Ewcia" },
-  { src: kosaMotocykle, alt: "Haft motocyklowy — Kosa" },
-  { src: buszu, alt: "Haft personalizowany — Buszu" },
-  { src: dsf0037, alt: "Realizacja haftu na odzieży" },
-  { src: dsf0038, alt: "Haft na kurtce" },
-  { src: dsf0034, alt: "Detale haftu maszynowego" },
-  { src: joker, alt: "Haft Joker na bluzie" },
-  { src: helenowka, alt: "Haft dla Helenówka" },
-  { src: img8473, alt: "Haft na czapce" },
-  { src: img6381, alt: "Haft firmowy na odzieży roboczej" },
+  { src: ewcia, alt: "Haft na bluzie — Ewcia", w: 600, h: 575 },
+  { src: kosaMotocykle, alt: "Haft motocyklowy — Kosa", w: 600, h: 335 },
+  { src: buszu, alt: "Haft personalizowany — Buszu", w: 600, h: 236 },
+  { src: dsf0037, alt: "Realizacja haftu na odzieży", w: 600, h: 450 },
+  { src: dsf0038, alt: "Haft na kurtce", w: 450, h: 600 },
+  { src: dsf0034, alt: "Detale haftu maszynowego", w: 450, h: 600 },
+  { src: joker, alt: "Haft Joker na bluzie", w: 338, h: 600 },
+  { src: helenowka, alt: "Haft dla Helenówka", w: 600, h: 450 },
+  { src: img8473, alt: "Haft na czapce", w: 600, h: 450 },
+  { src: img6381, alt: "Haft firmowy na odzieży roboczej", w: 450, h: 600 },
 ];
 
 const Realizacje = () => {
