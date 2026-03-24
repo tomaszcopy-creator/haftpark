@@ -38,7 +38,7 @@ const specs = [
 const wholesaleBrands = [
   {
     name: "JHK",
-    url: "https://jhk.info",
+    url: "https://jhkpolska.pl/",
     description:
       "Europejski producent odzieży promocyjnej — koszulki, bluzy, polary w szerokim wyborze kolorów i rozmiarów.",
   },
