@@ -153,7 +153,7 @@ const Sklep = () => {
 
             <div className="mt-8 text-center">
               <a
-                href="#contact"
+                href="/#contact"
                 className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
               >
                 Zapytaj o ofertę hurtową
