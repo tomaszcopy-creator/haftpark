@@ -9,6 +9,9 @@ const Footer = () => {
             <img
               src="/logo-haft-park.jpg"
               alt="Haft Park"
+              width={80}
+              height={40}
+              loading="lazy"
               className="h-10 w-auto brightness-0 invert"
             />
           </div>
