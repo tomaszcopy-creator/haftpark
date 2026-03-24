@@ -11,7 +11,7 @@ import dsf0037 from "@/assets/realizacje/DSF0037.webp";
 import dsf0038 from "@/assets/realizacje/DSF0038.webp";
 import dsf0034 from "@/assets/realizacje/DSF0034-2.webp";
 import joker from "@/assets/realizacje/Joker-2.webp";
-import helenowka from "@/assets/realizacje/Helenówka-2.webp";
+import helenowka from "@/assets/realizacje/Helenowka-2.webp";
 import img8473 from "@/assets/realizacje/IMG_8473.webp";
 import img6381 from "@/assets/realizacje/IMG_6381.webp";
 
