@@ -12,6 +12,7 @@ const Hero = () => {
           src={heroCollage}
           alt="Kolaż realizacji haftu komputerowego"
           className="h-full w-full object-cover"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-background/85" />
       </div>

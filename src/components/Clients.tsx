@@ -70,6 +70,9 @@ const Clients = () => {
               <img
                 src={client.src}
                 alt={client.alt}
+                width={160}
+                height={80}
+                loading="lazy"
                 className="max-h-full max-w-full object-contain mix-blend-multiply dark:mix-blend-screen"
               />
             </div>
