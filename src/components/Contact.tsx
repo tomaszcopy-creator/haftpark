@@ -168,7 +168,7 @@ const Contact = () => {
                 <Clock className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <h4 className="font-semibold text-foreground">Godziny otwarcia</h4>
+                <h3 className="font-semibold text-foreground text-base">Godziny otwarcia</h3>
                 <p className="text-muted-foreground">
                   Poniedziałek – Piątek: 08:00 – 20:00
                   <br />
