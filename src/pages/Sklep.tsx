@@ -38,16 +38,19 @@ const specs = [
 const wholesaleBrands = [
   {
     name: "JHK",
+    url: "https://jhk.info",
     description:
       "Europejski producent odzieży promocyjnej — koszulki, bluzy, polary w szerokim wyborze kolorów i rozmiarów.",
   },
   {
     name: "Promostars",
+    url: "https://promostars.com",
     description:
       "Polski producent odzieży reklamowej — koszulki polo, bluzy, czapki i akcesoria w konkurencyjnych cenach.",
   },
   {
     name: "Malfini",
+    url: "https://malfini.com",
     description:
       "Czeski producent premium — odzież reklamowa i robocza o podwyższonej jakości wykończenia i trwałości.",
   },
@@ -136,6 +139,14 @@ const Sklep = () => {
                 >
                   <p className="text-3xl font-bold text-foreground">{brand.name}</p>
                   <p className="mt-3 text-sm text-muted-foreground">{brand.description}</p>
+                  <a
+                    href={brand.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-block text-sm font-medium text-primary transition-colors hover:text-primary/80"
+                  >
+                    Odwiedź stronę →
+                  </a>
                 </div>
               ))}
             </div>
