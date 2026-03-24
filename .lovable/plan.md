@@ -1,17 +1,21 @@
 
 
-## Problem
+## Plan: Dodanie sekcji producentów hurtowych do podstrony Sklep
 
-Plik `Helenówka-2.webp` zawiera polski znak diakrytyczny **ó** w nazwie. Vite przy budowaniu koduje ten znak w haślu pliku, ale serwer produkcyjny (lub CDN) nie obsługuje poprawnie znaków Unicode w ścieżkach — stąd **404 Not Found**.
+### Co robimy
+Dodajemy nową sekcję na podstronie `/sklep`, poniżej specyfikacji bluz, informującą że Haft Park oferuje również odzież od znanych producentów hurtowych — JHK i Promostars — gotową do haftowania.
 
-## Rozwiązanie
+### Zmiany w pliku `src/pages/Sklep.tsx`
 
-Zmienić nazwę pliku z `Helenówka-2.webp` na `Helenowka-2.webp` (bez polskich znaków) i zaktualizować import.
+Dodanie nowej sekcji po bloku specyfikacji (po linii 84), zawierającej:
+
+- Nagłówek h2: "Oferujemy również odzież od producentów hurtowych"
+- Krótki opis wyjaśniający, że klient może zamówić odzież od JHK lub Promostars z haftem w jednym miejscu
+- Dwa "kafelki" z nazwami producentów (JHK i Promostars) w formie stylizowanych kart tekstowych z krótkim opisem każdego
+- Przycisk CTA zachęcający do kontaktu w sprawie zamówienia
+
+Styl wizualny będzie spójny z istniejącą sekcją specyfikacji — border, bg-card, zaokrąglone rogi. Nazwy producentów będą wyróżnione jako duże, pogrubione teksty (bez logotypów — na razie tylko tekst).
 
 ### Pliki do edycji
-
-1. **Zmiana nazwy pliku**: `src/assets/realizacje/Helenówka-2.webp` → `src/assets/realizacje/Helenowka-2.webp`
-2. **`src/pages/Realizacje.tsx`** — linia 14: zmiana importu z `Helenówka-2.webp` na `Helenowka-2.webp`
-
-Żadne inne zmiany nie są potrzebne — alt text i reszta kodu pozostają bez zmian.
+- `src/pages/Sklep.tsx` — dodanie sekcji producentów hurtowych
 
