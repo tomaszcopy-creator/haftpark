@@ -139,6 +139,14 @@ const Sklep = () => {
                 >
                   <p className="text-3xl font-bold text-foreground">{brand.name}</p>
                   <p className="mt-3 text-sm text-muted-foreground">{brand.description}</p>
+                  <a
+                    href={brand.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-block text-sm font-medium text-primary transition-colors hover:text-primary/80"
+                  >
+                    Odwiedź stronę →
+                  </a>
                 </div>
               ))}
             </div>
