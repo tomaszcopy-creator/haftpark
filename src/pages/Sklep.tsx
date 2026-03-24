@@ -65,6 +65,40 @@ const Sklep = () => {
             ))}
           </div>
 
+          <div className="mx-auto mt-16 max-w-3xl">
+            <h2 className="mb-4 text-center text-2xl font-bold text-foreground md:text-3xl">
+              Oferujemy również odzież od{" "}
+              <span className="text-primary">producentów hurtowych</span>
+            </h2>
+            <p className="mx-auto mb-8 max-w-lg text-center text-muted-foreground">
+              Zamów odzież od sprawdzonych marek — gotową do haftowania według Twojego projektu. Wszystko w jednym miejscu.
+            </p>
+
+            <div className="grid gap-6 sm:grid-cols-2">
+              <div className="rounded-lg border border-border bg-card p-8 text-center">
+                <p className="text-3xl font-bold text-foreground">JHK</p>
+                <p className="mt-3 text-sm text-muted-foreground">
+                  Europejski producent odzieży promocyjnej — koszulki, bluzy, polary w szerokim wyborze kolorów i rozmiarów.
+                </p>
+              </div>
+              <div className="rounded-lg border border-border bg-card p-8 text-center">
+                <p className="text-3xl font-bold text-foreground">Promostars</p>
+                <p className="mt-3 text-sm text-muted-foreground">
+                  Polski producent odzieży reklamowej — koszulki polo, bluzy, czapki i akcesoria w konkurencyjnych cenach.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8 text-center">
+              <a
+                href="#contact"
+                className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                Zapytaj o ofertę hurtową
+              </a>
+            </div>
+          </div>
+
           <div className="mx-auto mt-16 max-w-lg rounded-lg border border-border bg-card p-8 text-center">
             <h2 className="mb-4 text-xl font-bold text-foreground">Specyfikacja bluz</h2>
             <ul className="space-y-2 text-muted-foreground">
