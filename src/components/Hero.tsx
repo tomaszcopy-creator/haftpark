@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
-import heroCollage from "@/assets/hero-collage.webp";
+const heroCollage = "/hero-collage.webp";
 
 const Hero = () => {
   return (
