@@ -33,7 +33,7 @@ const Footer = () => {
               Polityka prywatności
             </Link>
           </div>
-          <p className="text-xs text-primary-foreground/40">
+          <p className="text-xs text-primary-foreground/60">
             © {new Date().getFullYear()} Haft Park. Wszelkie prawa zastrzeżone.
           </p>
         </div>
