@@ -44,7 +44,7 @@ const wholesaleBrands = [
   },
   {
     name: "Promostars",
-    url: "https://promostars.com",
+    url: "https://www.promostars.pl/",
     description:
       "Polski producent odzieży reklamowej — koszulki polo, bluzy, czapki i akcesoria w konkurencyjnych cenach.",
   },
