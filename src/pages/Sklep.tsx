@@ -50,7 +50,7 @@ const wholesaleBrands = [
   },
   {
     name: "Malfini",
-    url: "https://malfini.com",
+    url: "https://www.adler-sklep.pl/",
     description:
       "Czeski producent premium — odzież reklamowa i robocza o podwyższonej jakości wykończenia i trwałości.",
   },
