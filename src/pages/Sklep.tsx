@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Star } from "lucide-react";
 import bluzaClassic from "@/assets/bluza-classic.png";
 import bluzaBoxy from "@/assets/bluza-boxy.png";
 import bluzaBaggy from "@/assets/bluza-baggy.png";
@@ -33,6 +35,24 @@ const specs = [
   "Wyprodukowane w Polsce",
 ];
 
+const wholesaleBrands = [
+  {
+    name: "JHK",
+    description:
+      "Europejski producent odzieży promocyjnej — koszulki, bluzy, polary w szerokim wyborze kolorów i rozmiarów.",
+  },
+  {
+    name: "Promostars",
+    description:
+      "Polski producent odzieży reklamowej — koszulki polo, bluzy, czapki i akcesoria w konkurencyjnych cenach.",
+  },
+  {
+    name: "Malfini",
+    description:
+      "Czeski producent premium — odzież reklamowa i robocza o podwyższonej jakości wykończenia i trwałości.",
+  },
+];
+
 const Sklep = () => {
   return (
     <div className="flex min-h-screen flex-col">
@@ -43,12 +63,27 @@ const Sklep = () => {
             Nasz <span className="text-primary">Sklep</span>
           </h1>
           <p className="mx-auto mb-14 max-w-md text-center text-muted-foreground">
-            Bluzy dostępne w różnych kolorach i rozmiarach
+            Odzież premium i hurtowa — gotowa do haftowania
+          </p>
+
+          {/* Premium section */}
+          <div className="mb-6 flex items-center justify-center gap-2">
+            <Star className="h-5 w-5 fill-primary text-primary" />
+            <h2 className="text-center text-2xl font-bold text-foreground md:text-3xl">
+              Kolekcja <span className="text-primary">Premium</span>
+            </h2>
+            <Star className="h-5 w-5 fill-primary text-primary" />
+          </div>
+          <p className="mx-auto mb-10 max-w-lg text-center text-muted-foreground">
+            Bluzy własnej produkcji z najwyższej jakości polskich materiałów. Dostępne również hurtowo.
           </p>
 
           <div className="mx-auto grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {products.map((product) => (
-              <Card key={product.name} className="overflow-hidden border-border">
+              <Card key={product.name} className="relative overflow-hidden border-border">
+                <Badge className="absolute right-3 top-3 z-10 bg-primary text-primary-foreground">
+                  Premium
+                </Badge>
                 <div className="aspect-square overflow-hidden bg-muted">
                   <img
                     src={product.image}
@@ -65,8 +100,8 @@ const Sklep = () => {
             ))}
           </div>
 
-          <div className="mx-auto mt-16 max-w-lg rounded-lg border border-border bg-card p-8 text-center">
-            <h2 className="mb-4 text-xl font-bold text-foreground">Specyfikacja bluz</h2>
+          <div className="mx-auto mt-10 max-w-lg rounded-lg border border-border bg-card p-8 text-center">
+            <h3 className="mb-4 text-xl font-bold text-foreground">Specyfikacja bluz premium</h3>
             <ul className="space-y-2 text-muted-foreground">
               {specs.map((spec) => (
                 <li key={spec}>• {spec}</li>
@@ -83,28 +118,26 @@ const Sklep = () => {
             </div>
           </div>
 
-          <div className="mx-auto mt-16 max-w-3xl">
+          {/* Wholesale brands section */}
+          <div className="mx-auto mt-20 max-w-4xl">
             <h2 className="mb-4 text-center text-2xl font-bold text-foreground md:text-3xl">
-              Oferujemy również odzież od{" "}
+              Odzież od{" "}
               <span className="text-primary">producentów hurtowych</span>
             </h2>
-            <p className="mx-auto mb-8 max-w-lg text-center text-muted-foreground">
-              Zamów odzież od sprawdzonych marek — gotową do haftowania według Twojego projektu. Wszystko w jednym miejscu.
+            <p className="mx-auto mb-10 max-w-lg text-center text-muted-foreground">
+              Oferujemy również odzież od sprawdzonych marek — gotową do haftowania według Twojego projektu. Wszystko w jednym miejscu.
             </p>
 
-            <div className="grid gap-6 sm:grid-cols-2">
-              <div className="rounded-lg border border-border bg-card p-8 text-center">
-                <p className="text-3xl font-bold text-foreground">JHK</p>
-                <p className="mt-3 text-sm text-muted-foreground">
-                  Europejski producent odzieży promocyjnej — koszulki, bluzy, polary w szerokim wyborze kolorów i rozmiarów.
-                </p>
-              </div>
-              <div className="rounded-lg border border-border bg-card p-8 text-center">
-                <p className="text-3xl font-bold text-foreground">Promostars</p>
-                <p className="mt-3 text-sm text-muted-foreground">
-                  Polski producent odzieży reklamowej — koszulki polo, bluzy, czapki i akcesoria w konkurencyjnych cenach.
-                </p>
-              </div>
+            <div className="grid gap-6 sm:grid-cols-3">
+              {wholesaleBrands.map((brand) => (
+                <div
+                  key={brand.name}
+                  className="rounded-lg border border-border bg-card p-8 text-center"
+                >
+                  <p className="text-3xl font-bold text-foreground">{brand.name}</p>
+                  <p className="mt-3 text-sm text-muted-foreground">{brand.description}</p>
+                </div>
+              ))}
             </div>
 
             <div className="mt-8 text-center">
