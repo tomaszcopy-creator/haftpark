@@ -139,7 +139,7 @@ const Contact = () => {
                 <MapPin className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <h4 className="font-semibold text-foreground">Adres</h4>
+                <h3 className="font-semibold text-foreground text-base">Adres</h3>
                 <p className="text-muted-foreground">
                   ul. Parkowa 36
                   <br />
@@ -153,7 +153,7 @@ const Contact = () => {
                 <Phone className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <h4 className="font-semibold text-foreground">Telefon</h4>
+                <h3 className="font-semibold text-foreground text-base">Telefon</h3>
                 <a
                   href="tel:+48510751008"
                   className="text-primary transition-colors hover:text-primary/80"
@@ -168,7 +168,7 @@ const Contact = () => {
                 <Clock className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <h4 className="font-semibold text-foreground">Godziny otwarcia</h4>
+                <h3 className="font-semibold text-foreground text-base">Godziny otwarcia</h3>
                 <p className="text-muted-foreground">
                   Poniedziałek – Piątek: 08:00 – 20:00
                   <br />
