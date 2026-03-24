@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
           <div className="flex items-center gap-3">
             <img
-              src="/logo-haft-park.jpg"
+              src="/logo-haft-park.webp"
               alt="Haft Park"
               width={80}
               height={40}
