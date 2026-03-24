@@ -139,7 +139,7 @@ const Contact = () => {
                 <MapPin className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <h4 className="font-semibold text-foreground">Adres</h4>
+                <h3 className="font-semibold text-foreground text-base">Adres</h3>
                 <p className="text-muted-foreground">
                   ul. Parkowa 36
                   <br />
