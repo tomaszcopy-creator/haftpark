@@ -91,6 +91,8 @@ const Realizacje = () => {
                   <img
                     src={item.src}
                     alt={item.alt}
+                    width={item.w}
+                    height={item.h}
                     loading="lazy"
                     className="w-full rounded-lg object-cover transition-transform duration-300 group-hover:scale-105"
                   />
