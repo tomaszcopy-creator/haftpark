@@ -38,16 +38,19 @@ const specs = [
 const wholesaleBrands = [
   {
     name: "JHK",
+    url: "https://jhk.info",
     description:
       "Europejski producent odzieży promocyjnej — koszulki, bluzy, polary w szerokim wyborze kolorów i rozmiarów.",
   },
   {
     name: "Promostars",
+    url: "https://promostars.com",
     description:
       "Polski producent odzieży reklamowej — koszulki polo, bluzy, czapki i akcesoria w konkurencyjnych cenach.",
   },
   {
     name: "Malfini",
+    url: "https://malfini.com",
     description:
       "Czeski producent premium — odzież reklamowa i robocza o podwyższonej jakości wykończenia i trwałości.",
   },
