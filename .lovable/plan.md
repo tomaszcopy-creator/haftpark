@@ -1,21 +1,34 @@
 
 
-## Plan: Dodanie sekcji producentów hurtowych do podstrony Sklep
+## Plan: Połączenie formularza kontaktowego z e-mailem
 
 ### Co robimy
-Dodajemy nową sekcję na podstronie `/sklep`, poniżej specyfikacji bluz, informującą że Haft Park oferuje również odzież od znanych producentów hurtowych — JHK i Promostars — gotową do haftowania.
+Gdy klient wypełni formularz kontaktowy, na Twój adres e-mail zostanie wysłana wiadomość z danymi klienta (imię, e-mail, telefon, treść wiadomości). Wykorzystamy wbudowany system e-mail Lovable — nie potrzebujesz żadnych zewnętrznych kont ani kluczy API.
 
-### Zmiany w pliku `src/pages/Sklep.tsx`
+### Kroki
 
-Dodanie nowej sekcji po bloku specyfikacji (po linii 84), zawierającej:
+1. **Włączenie Lovable Cloud** — potrzebne do obsługi backendu (edge functions i wysyłki e-mail)
 
-- Nagłówek h2: "Oferujemy również odzież od producentów hurtowych"
-- Krótki opis wyjaśniający, że klient może zamówić odzież od JHK lub Promostars z haftem w jednym miejscu
-- Dwa "kafelki" z nazwami producentów (JHK i Promostars) w formie stylizowanych kart tekstowych z krótkim opisem każdego
-- Przycisk CTA zachęcający do kontaktu w sprawie zamówienia
+2. **Konfiguracja domeny e-mail** — ustawienie domeny nadawcy, żeby wiadomości przychodziły z Twojej domeny (np. notify@haftpark.com)
 
-Styl wizualny będzie spójny z istniejącą sekcją specyfikacji — border, bg-card, zaokrąglone rogi. Nazwy producentów będą wyróżnione jako duże, pogrubione teksty (bez logotypów — na razie tylko tekst).
+3. **Utworzenie infrastruktury e-mail** — baza danych i kolejka do niezawodnej wysyłki
 
-### Pliki do edycji
-- `src/pages/Sklep.tsx` — dodanie sekcji producentów hurtowych
+4. **Utworzenie szablonu e-mail** — szablon "nowe zapytanie z formularza" zawierający dane klienta (imię, e-mail, telefon, wiadomość), wysyłany na Twój adres
+
+5. **Podłączenie formularza** — zmiana w `src/components/Contact.tsx`:
+   - Po walidacji formularza wywołanie edge function `send-transactional-email` z danymi klienta
+   - E-mail trafi na Twój adres z pełnymi danymi zapytania
+   - Dodanie obsługi błędów (jeśli wysyłka się nie powiedzie, użytkownik zobaczy komunikat)
+
+6. **Strona unsubscribe** — wymagana przez system, zostanie dodana automatycznie
+
+### Szczegóły techniczne
+- Edge function: `send-transactional-email` (jedna uniwersalna funkcja)
+- Szablon React Email w `supabase/functions/_shared/transactional-email-templates/`
+- Adres odbiorcy (Twój e-mail) zostanie ustawiony w szablonie jako stały
+- Formularz będzie wysyłał dane przez `supabase.functions.invoke()`
+
+### Co będziesz musiał zrobić
+- Podać swój adres e-mail, na który mają trafiać wiadomości
+- Skonfigurować domenę e-mail (pojawi się okno konfiguracji)
 
