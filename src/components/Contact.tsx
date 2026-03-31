@@ -33,7 +33,7 @@ const Contact = () => {
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = contactSchema.safeParse(form);
     if (!result.success) {
@@ -45,8 +45,36 @@ const Contact = () => {
       setErrors(fieldErrors);
       return;
     }
-    setSubmitted(true);
-    toast({ title: "Wiadomość wysłana!", description: "Skontaktujemy się z Tobą wkrótce." });
+
+    setSending(true);
+    try {
+      const id = crypto.randomUUID();
+      const { error } = await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "contact-form-notification",
+          recipientEmail: result.data.email,
+          idempotencyKey: `contact-${id}`,
+          templateData: {
+            name: result.data.name,
+            email: result.data.email,
+            phone: result.data.phone,
+            message: result.data.message,
+          },
+        },
+      });
+
+      if (error) throw error;
+      setSubmitted(true);
+      toast({ title: "Wiadomość wysłana!", description: "Skontaktujemy się z Tobą wkrótce." });
+    } catch {
+      toast({
+        title: "Błąd wysyłania",
+        description: "Nie udało się wysłać wiadomości. Spróbuj ponownie lub zadzwoń.",
+        variant: "destructive",
+      });
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
