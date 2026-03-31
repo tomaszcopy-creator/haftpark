@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Podaj imię").max(100),
@@ -25,6 +26,7 @@ const Contact = () => {
   const [form, setForm] = useState<FormData>({ name: "", email: "", phone: "", message: "" });
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
 
   const handleChange = (field: keyof FormData, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
