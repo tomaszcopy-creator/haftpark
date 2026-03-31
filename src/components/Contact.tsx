@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Podaj imię").max(100),
@@ -25,13 +26,14 @@ const Contact = () => {
   const [form, setForm] = useState<FormData>({ name: "", email: "", phone: "", message: "" });
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
 
   const handleChange = (field: keyof FormData, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = contactSchema.safeParse(form);
     if (!result.success) {
@@ -43,8 +45,36 @@ const Contact = () => {
       setErrors(fieldErrors);
       return;
     }
-    setSubmitted(true);
-    toast({ title: "Wiadomość wysłana!", description: "Skontaktujemy się z Tobą wkrótce." });
+
+    setSending(true);
+    try {
+      const id = crypto.randomUUID();
+      const { error } = await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "contact-form-notification",
+          recipientEmail: result.data.email,
+          idempotencyKey: `contact-${id}`,
+          templateData: {
+            name: result.data.name,
+            email: result.data.email,
+            phone: result.data.phone,
+            message: result.data.message,
+          },
+        },
+      });
+
+      if (error) throw error;
+      setSubmitted(true);
+      toast({ title: "Wiadomość wysłana!", description: "Skontaktujemy się z Tobą wkrótce." });
+    } catch {
+      toast({
+        title: "Błąd wysyłania",
+        description: "Nie udało się wysłać wiadomości. Spróbuj ponownie lub zadzwoń.",
+        variant: "destructive",
+      });
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -120,8 +150,8 @@ const Contact = () => {
                   />
                   {errors.message && <p className="mt-1 text-sm text-destructive">{errors.message}</p>}
                 </div>
-                <Button type="submit" size="lg" className="w-full">
-                  Wyślij wiadomość
+                <Button type="submit" size="lg" className="w-full" disabled={sending}>
+                  {sending ? "Wysyłanie…" : "Wyślij wiadomość"}
                 </Button>
               </form>
             )}
