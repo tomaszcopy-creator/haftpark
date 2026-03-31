@@ -22,21 +22,20 @@ export const MagicLinkEmail = ({
   siteName,
   confirmationUrl,
 }: MagicLinkEmailProps) => (
-  <Html lang="en" dir="ltr">
+  <Html lang="pl" dir="ltr">
     <Head />
-    <Preview>Your login link for {siteName}</Preview>
+    <Preview>Twój link do logowania — {siteName}</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Heading style={h1}>Your login link</Heading>
+        <Heading style={h1}>Link do logowania</Heading>
         <Text style={text}>
-          Click the button below to log in to {siteName}. This link will expire
-          shortly.
+          Kliknij poniższy przycisk, aby zalogować się do {siteName}. Link wygaśnie wkrótce.
         </Text>
         <Button style={button} href={confirmationUrl}>
-          Log In
+          Zaloguj się
         </Button>
         <Text style={footer}>
-          If you didn't request this link, you can safely ignore this email.
+          Jeśli nie prosiłeś o ten link, możesz zignorować tę wiadomość.
         </Text>
       </Container>
     </Body>
@@ -45,23 +44,23 @@ export const MagicLinkEmail = ({
 
 export default MagicLinkEmail
 
-const main = { backgroundColor: '#ffffff', fontFamily: 'Arial, sans-serif' }
+const main = { backgroundColor: '#ffffff', fontFamily: "'DM Sans', Arial, sans-serif" }
 const container = { padding: '20px 25px' }
 const h1 = {
   fontSize: '22px',
   fontWeight: 'bold' as const,
-  color: '#000000',
+  color: 'hsl(0, 0%, 12%)',
   margin: '0 0 20px',
 }
 const text = {
   fontSize: '14px',
-  color: '#55575d',
+  color: 'hsl(0, 0%, 45%)',
   lineHeight: '1.5',
   margin: '0 0 25px',
 }
 const button = {
-  backgroundColor: '#000000',
-  color: '#ffffff',
+  backgroundColor: 'hsl(0, 65%, 33%)',
+  color: 'hsl(0, 0%, 98%)',
   fontSize: '14px',
   borderRadius: '8px',
   padding: '12px 20px',
