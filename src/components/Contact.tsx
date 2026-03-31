@@ -150,8 +150,8 @@ const Contact = () => {
                   />
                   {errors.message && <p className="mt-1 text-sm text-destructive">{errors.message}</p>}
                 </div>
-                <Button type="submit" size="lg" className="w-full">
-                  Wyślij wiadomość
+                <Button type="submit" size="lg" className="w-full" disabled={sending}>
+                  {sending ? "Wysyłanie…" : "Wyślij wiadomość"}
                 </Button>
               </form>
             )}
