@@ -9,6 +9,7 @@ import PolitykaPrywatnosci from "./pages/PolitykaPrywatnosci";
 import Sklep from "./pages/Sklep";
 import Realizacje from "./pages/Realizacje";
 import NotFound from "./pages/NotFound";
+import Unsubscribe from "./pages/Unsubscribe";
 import CookieConsent from "./components/CookieConsent";
 
 const queryClient = new QueryClient();
