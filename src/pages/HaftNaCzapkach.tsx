@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useCanonical } from "@/hooks/useCanonical";
 import { motion } from "framer-motion";
 import { Phone, ArrowRight, HardHat, Store, Users, MapPin, Eye, AlignLeft, CircleDot, Shirt, ShoppingBag, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
