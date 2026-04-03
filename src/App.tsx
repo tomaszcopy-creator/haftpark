@@ -10,6 +10,7 @@ import Sklep from "./pages/Sklep";
 import Realizacje from "./pages/Realizacje";
 import HaftNaOdziezy from "./pages/HaftNaOdziezy";
 import Haft3D from "./pages/Haft3D";
+import HaftNaCzapkach from "./pages/HaftNaCzapkach";
 import NotFound from "./pages/NotFound";
 import Unsubscribe from "./pages/Unsubscribe";
 import CookieConsent from "./components/CookieConsent";
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/realizacje" element={<Realizacje />} />
           <Route path="/haft-na-odziezy" element={<HaftNaOdziezy />} />
           <Route path="/haft-3d" element={<Haft3D />} />
+          <Route path="/haft-na-czapkach" element={<HaftNaCzapkach />} />
           <Route path="/unsubscribe" element={<Unsubscribe />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

@@ -6,6 +6,7 @@ import NavLink from "@/components/NavLink";
 
 const ofertaLinks = [
   { label: "Haft na odzieży", href: "/haft-na-odziezy" },
+  { label: "Haft na czapkach", href: "/haft-na-czapkach" },
   { label: "Haft 3D", href: "/haft-3d" },
 ];
 
