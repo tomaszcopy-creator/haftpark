@@ -50,17 +50,8 @@ const Haft3D = () => {
       meta.content = "Efektowny haft 3D na czapkach z daszkiem, bluzach i odzieży roboczej. Wypukłe logo i napisy, które przyciągają wzrok. Zamów próbkę i wycenę bez zobowiązań.";
       document.head.appendChild(meta);
     }
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://www.haftpark.com/haft-3d";
-
     return () => {
       document.title = "Haft Park";
-      canonical?.remove();
     };
   }, []);
 

@@ -73,17 +73,8 @@ const HaftNaOdziezy = () => {
       meta.content = "Haft komputerowy logo i napisów na koszulkach, bluzach, polarach i odzieży roboczej. Trwałe znakowanie odzieży dla firm, agencji i marek odzieżowych. Wycena gratis.";
       document.head.appendChild(meta);
     }
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://www.haftpark.com/haft-na-odziezy";
-
     return () => {
       document.title = "Haft Park";
-      canonical?.remove();
     };
   }, []);
 

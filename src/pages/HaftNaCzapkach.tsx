@@ -67,16 +67,8 @@ const HaftNaCzapkach = () => {
       meta.content = "Haftujemy logo, napisy i wzory na czapkach z daszkiem, zimowych i beanie. Własny projekt lub gotowy wzór. Realizacja seryjnych zamówień dla firm i sklepów odzieżowych.";
       document.head.appendChild(meta);
     }
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://www.haftpark.com/haft-na-czapkach";
     return () => {
       document.title = "Haft Park";
-      canonical?.remove();
     };
   }, []);
 
