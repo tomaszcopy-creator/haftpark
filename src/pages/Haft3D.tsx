@@ -99,9 +99,9 @@ const Haft3D = () => {
               </motion.p>
               <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.3 }} className="mb-16 flex flex-col gap-4 sm:flex-row">
                 <Button asChild size="lg" className="gap-2 px-8 text-base">
-                  <a href="#contact">
-                    <ArrowRight className="h-4 w-4" />
-                    Zamów próbkę
+                  <a href="tel:+48510751008">
+                    <Phone className="h-4 w-4" />
+                    Zadzwoń po wycenę
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="gap-2 px-8 text-base">
