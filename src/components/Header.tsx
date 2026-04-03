@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import NavLink from "@/components/NavLink";
 
 const navLinks = [
+  { label: "Haft na odzieży", href: "/haft-na-odziezy" },
   { label: "Realizacje", href: "/realizacje" },
   { label: "Sklep", href: "/sklep" },
   { label: "O nas", href: "/#stats" },
