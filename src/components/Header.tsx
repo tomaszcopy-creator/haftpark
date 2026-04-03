@@ -1,22 +1,25 @@
 import { useState } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import NavLink from "@/components/NavLink";
 
-const navLinks = [
+const ofertaLinks = [
   { label: "Haft na odzieży", href: "/haft-na-odziezy" },
   { label: "Haft 3D", href: "/haft-3d" },
+];
+
+const mainLinks = [
   { label: "Realizacje", href: "/realizacje" },
   { label: "Sklep", href: "/sklep" },
   { label: "O nas", href: "/#stats" },
-  { label: "Proces", href: "/#process" },
   { label: "FAQ", href: "/#faq" },
   { label: "Kontakt", href: "/#contact" },
 ];
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [ofertaMobileOpen, setOfertaMobileOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
@@ -32,8 +35,29 @@ const Header = () => {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-8 md:flex">
-          {navLinks.map((l) => (
+        <nav className="hidden items-center gap-7 md:flex">
+          {/* Oferta dropdown */}
+          <div className="group relative">
+            <button className="flex items-center gap-1 text-sm font-medium tracking-wide text-foreground/80 transition-colors hover:text-primary">
+              Oferta
+              <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
+            </button>
+            <div className="pointer-events-none absolute left-1/2 top-full pt-2 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:opacity-100 -translate-x-1/2">
+              <div className="min-w-[200px] rounded-lg border border-border bg-background p-2 shadow-lg">
+                {ofertaLinks.map((l) => (
+                  <NavLink
+                    key={l.href}
+                    href={l.href}
+                    className="block rounded-md px-3 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-primary"
+                  >
+                    {l.label}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {mainLinks.map((l) => (
             <NavLink
               key={l.href}
               href={l.href}
@@ -64,7 +88,30 @@ const Header = () => {
       {mobileOpen && (
         <nav className="border-t border-border bg-background px-6 pb-6 pt-4 md:hidden">
           <div className="flex flex-col gap-4">
-            {navLinks.map((l) => (
+            {/* Oferta accordion */}
+            <button
+              onClick={() => setOfertaMobileOpen(!ofertaMobileOpen)}
+              className="flex items-center justify-between text-base font-medium text-foreground/80 transition-colors hover:text-primary"
+            >
+              Oferta
+              <ChevronDown className={`h-4 w-4 transition-transform ${ofertaMobileOpen ? "rotate-180" : ""}`} />
+            </button>
+            {ofertaMobileOpen && (
+              <div className="flex flex-col gap-3 pl-4 border-l-2 border-primary/20">
+                {ofertaLinks.map((l) => (
+                  <NavLink
+                    key={l.href}
+                    href={l.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="text-sm font-medium text-foreground/70 transition-colors hover:text-primary"
+                  >
+                    {l.label}
+                  </NavLink>
+                ))}
+              </div>
+            )}
+
+            {mainLinks.map((l) => (
               <NavLink
                 key={l.href}
                 href={l.href}
