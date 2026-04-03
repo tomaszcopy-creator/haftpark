@@ -9,8 +9,10 @@ import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
+import { useCanonical } from "@/hooks/useCanonical";
 
 const Index = () => {
+  useCanonical("/");
   return (
     <div className="min-h-screen bg-background">
       <Header />

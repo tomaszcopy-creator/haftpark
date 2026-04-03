@@ -30,6 +30,7 @@ const gallery = [
 ];
 
 const Realizacje = () => {
+  useCanonical("/realizacje");
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const close = useCallback(() => setSelectedIndex(null), []);

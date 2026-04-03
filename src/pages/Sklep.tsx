@@ -58,6 +58,7 @@ const wholesaleBrands = [
 ];
 
 const Sklep = () => {
+  useCanonical("/sklep");
   return (
     <div className="flex min-h-screen flex-col">
       <Header />

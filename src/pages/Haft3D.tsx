@@ -39,6 +39,7 @@ const fadeUp = {
 };
 
 const Haft3D = () => {
+  useCanonical("/haft-3d");
   useEffect(() => {
     document.title = "Haft 3D na Czapkach i Odzieży | Haft Park Myszków";
     const metaDesc = document.querySelector('meta[name="description"]');

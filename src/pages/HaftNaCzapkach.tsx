@@ -56,6 +56,7 @@ const faqs = [
 ];
 
 const HaftNaCzapkach = () => {
+  useCanonical("/haft-na-czapkach");
   useEffect(() => {
     document.title = "Haft na Czapkach z Daszkiem i Zimowych | Haft Park";
     const metaDesc = document.querySelector('meta[name="description"]');

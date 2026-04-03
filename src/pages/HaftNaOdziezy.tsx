@@ -62,6 +62,7 @@ const fadeUp = {
 };
 
 const HaftNaOdziezy = () => {
+  useCanonical("/haft-na-odziezy");
   useEffect(() => {
     document.title = "Haft na Odzieży Firmowej i Roboczej | Haft Park";
     const metaDesc = document.querySelector('meta[name="description"]');
