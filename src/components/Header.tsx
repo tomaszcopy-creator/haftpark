@@ -6,6 +6,7 @@ import NavLink from "@/components/NavLink";
 
 const navLinks = [
   { label: "Haft na odzieży", href: "/haft-na-odziezy" },
+  { label: "Haft 3D", href: "/haft-3d" },
   { label: "Realizacje", href: "/realizacje" },
   { label: "Sklep", href: "/sklep" },
   { label: "O nas", href: "/#stats" },
