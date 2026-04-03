@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { useCanonical } from "@/hooks/useCanonical";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
