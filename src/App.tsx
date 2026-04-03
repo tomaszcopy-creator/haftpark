@@ -8,6 +8,7 @@ import Regulamin from "./pages/Regulamin";
 import PolitykaPrywatnosci from "./pages/PolitykaPrywatnosci";
 import Sklep from "./pages/Sklep";
 import Realizacje from "./pages/Realizacje";
+import HaftNaOdziezy from "./pages/HaftNaOdziezy";
 import NotFound from "./pages/NotFound";
 import Unsubscribe from "./pages/Unsubscribe";
 import CookieConsent from "./components/CookieConsent";
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/polityka-prywatnosci" element={<PolitykaPrywatnosci />} />
           <Route path="/sklep" element={<Sklep />} />
           <Route path="/realizacje" element={<Realizacje />} />
+          <Route path="/haft-na-odziezy" element={<HaftNaOdziezy />} />
           <Route path="/unsubscribe" element={<Unsubscribe />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
