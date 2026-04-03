@@ -9,6 +9,7 @@ import PolitykaPrywatnosci from "./pages/PolitykaPrywatnosci";
 import Sklep from "./pages/Sklep";
 import Realizacje from "./pages/Realizacje";
 import HaftNaOdziezy from "./pages/HaftNaOdziezy";
+import Haft3D from "./pages/Haft3D";
 import NotFound from "./pages/NotFound";
 import Unsubscribe from "./pages/Unsubscribe";
 import CookieConsent from "./components/CookieConsent";
