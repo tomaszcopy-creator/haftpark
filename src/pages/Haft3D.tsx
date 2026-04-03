@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useCanonical } from "@/hooks/useCanonical";
 import { motion } from "framer-motion";
 import { Phone, ArrowRight, HardHat, Trophy, Shirt, Gift, Medal, Tag, Layers, Cpu, Droplets, ShieldCheck, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -38,6 +39,7 @@ const fadeUp = {
 };
 
 const Haft3D = () => {
+  useCanonical("/haft-3d");
   useEffect(() => {
     document.title = "Haft 3D na Czapkach i Odzieży | Haft Park Myszków";
     const metaDesc = document.querySelector('meta[name="description"]');
@@ -49,17 +51,8 @@ const Haft3D = () => {
       meta.content = "Efektowny haft 3D na czapkach z daszkiem, bluzach i odzieży roboczej. Wypukłe logo i napisy, które przyciągają wzrok. Zamów próbkę i wycenę bez zobowiązań.";
       document.head.appendChild(meta);
     }
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://www.haftpark.com/haft-3d";
-
     return () => {
       document.title = "Haft Park";
-      canonical?.remove();
     };
   }, []);
 

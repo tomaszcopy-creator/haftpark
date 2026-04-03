@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useCanonical } from "@/hooks/useCanonical";
 import { motion } from "framer-motion";
 import { Phone, ArrowRight, Shirt, HardHat, Trophy, Hotel, Tag, Gift, Leaf, Zap, Scissors as ScissorsIcon, Ruler, ShieldCheck, Sparkles, Palette, Target, Eye, CheckCircle, MessageSquare, Cpu } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -61,6 +62,7 @@ const fadeUp = {
 };
 
 const HaftNaOdziezy = () => {
+  useCanonical("/haft-na-odziezy");
   useEffect(() => {
     document.title = "Haft na Odzieży Firmowej i Roboczej | Haft Park";
     const metaDesc = document.querySelector('meta[name="description"]');
@@ -72,17 +74,8 @@ const HaftNaOdziezy = () => {
       meta.content = "Haft komputerowy logo i napisów na koszulkach, bluzach, polarach i odzieży roboczej. Trwałe znakowanie odzieży dla firm, agencji i marek odzieżowych. Wycena gratis.";
       document.head.appendChild(meta);
     }
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://www.haftpark.com/haft-na-odziezy";
-
     return () => {
       document.title = "Haft Park";
-      canonical?.remove();
     };
   }, []);
 

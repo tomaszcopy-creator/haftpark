@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useCanonical } from "@/hooks/useCanonical";
 import { motion } from "framer-motion";
 import { Phone, ArrowRight, HardHat, Store, Users, MapPin, Eye, AlignLeft, CircleDot, Shirt, ShoppingBag, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -55,6 +56,7 @@ const faqs = [
 ];
 
 const HaftNaCzapkach = () => {
+  useCanonical("/haft-na-czapkach");
   useEffect(() => {
     document.title = "Haft na Czapkach z Daszkiem i Zimowych | Haft Park";
     const metaDesc = document.querySelector('meta[name="description"]');
@@ -66,16 +68,8 @@ const HaftNaCzapkach = () => {
       meta.content = "Haftujemy logo, napisy i wzory na czapkach z daszkiem, zimowych i beanie. Własny projekt lub gotowy wzór. Realizacja seryjnych zamówień dla firm i sklepów odzieżowych.";
       document.head.appendChild(meta);
     }
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = "https://www.haftpark.com/haft-na-czapkach";
     return () => {
       document.title = "Haft Park";
-      canonical?.remove();
     };
   }, []);
 
