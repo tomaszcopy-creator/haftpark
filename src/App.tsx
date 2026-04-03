@@ -8,6 +8,7 @@ import Regulamin from "./pages/Regulamin";
 import PolitykaPrywatnosci from "./pages/PolitykaPrywatnosci";
 import Sklep from "./pages/Sklep";
 import Realizacje from "./pages/Realizacje";
+import HaftNaOdziezy from "./pages/HaftNaOdziezy";
 import NotFound from "./pages/NotFound";
 import Unsubscribe from "./pages/Unsubscribe";
 import CookieConsent from "./components/CookieConsent";
