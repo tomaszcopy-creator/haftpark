@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star } from "lucide-react";
+import { useCanonical } from "@/hooks/useCanonical";
 import bluzaClassic from "@/assets/bluza-classic.png";
 import bluzaBoxy from "@/assets/bluza-boxy.png";
 import bluzaBaggy from "@/assets/bluza-baggy.png";
