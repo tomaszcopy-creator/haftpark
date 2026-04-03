@@ -10,6 +10,7 @@ import Sklep from "./pages/Sklep";
 import Realizacje from "./pages/Realizacje";
 import HaftNaOdziezy from "./pages/HaftNaOdziezy";
 import Haft3D from "./pages/Haft3D";
+import HaftNaCzapkach from "./pages/HaftNaCzapkach";
 import NotFound from "./pages/NotFound";
 import Unsubscribe from "./pages/Unsubscribe";
 import CookieConsent from "./components/CookieConsent";
