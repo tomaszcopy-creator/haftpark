@@ -1,15 +1,17 @@
+import { lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
-import ProblemSolution from "@/components/ProblemSolution";
-import Process from "@/components/Process";
-import WhyUs from "@/components/WhyUs";
-import Clients from "@/components/Clients";
-import FAQ from "@/components/FAQ";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import FloatingCTA from "@/components/FloatingCTA";
 import { useCanonical } from "@/hooks/useCanonical";
+
+const ProblemSolution = lazy(() => import("@/components/ProblemSolution"));
+const Process = lazy(() => import("@/components/Process"));
+const WhyUs = lazy(() => import("@/components/WhyUs"));
+const Clients = lazy(() => import("@/components/Clients"));
+const FAQ = lazy(() => import("@/components/FAQ"));
+const Contact = lazy(() => import("@/components/Contact"));
+const Footer = lazy(() => import("@/components/Footer"));
+const FloatingCTA = lazy(() => import("@/components/FloatingCTA"));
 
 const Index = () => {
   useCanonical("/");
@@ -19,15 +21,19 @@ const Index = () => {
       <main>
         <Hero />
         <Stats />
-        <ProblemSolution />
-        <Process />
-        <WhyUs />
-        <Clients />
-        <FAQ />
-        <Contact />
+        <Suspense fallback={null}>
+          <ProblemSolution />
+          <Process />
+          <WhyUs />
+          <Clients />
+          <FAQ />
+          <Contact />
+        </Suspense>
       </main>
-      <Footer />
-      <FloatingCTA />
+      <Suspense fallback={null}>
+        <Footer />
+        <FloatingCTA />
+      </Suspense>
     </div>
   );
 };

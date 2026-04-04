@@ -25,20 +25,22 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/regulamin" element={<Regulamin />} />
-          <Route path="/polityka-prywatnosci" element={<PolitykaPrywatnosci />} />
-          <Route path="/sklep" element={<Sklep />} />
-          <Route path="/realizacje" element={<Realizacje />} />
-          <Route path="/haft-na-odziezy" element={<HaftNaOdziezy />} />
-          <Route path="/haft-3d" element={<Haft3D />} />
-          <Route path="/haft-na-czapkach" element={<HaftNaCzapkach />} />
-          <Route path="/unsubscribe" element={<Unsubscribe />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <CookieConsent />
+        <Suspense fallback={null}>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/regulamin" element={<Regulamin />} />
+            <Route path="/polityka-prywatnosci" element={<PolitykaPrywatnosci />} />
+            <Route path="/sklep" element={<Sklep />} />
+            <Route path="/realizacje" element={<Realizacje />} />
+            <Route path="/haft-na-odziezy" element={<HaftNaOdziezy />} />
+            <Route path="/haft-3d" element={<Haft3D />} />
+            <Route path="/haft-na-czapkach" element={<HaftNaCzapkach />} />
+            <Route path="/unsubscribe" element={<Unsubscribe />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <CookieConsent />
+        </Suspense>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
