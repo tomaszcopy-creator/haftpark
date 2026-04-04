@@ -49,7 +49,7 @@ const Header = () => {
                   <NavLink
                     key={l.href}
                     href={l.href}
-                    className="block rounded-md px-3 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-primary"
+                    className="block rounded-md px-3 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-primary"
                   >
                     {l.label}
                   </NavLink>
