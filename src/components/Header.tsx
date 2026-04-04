@@ -13,6 +13,7 @@ const ofertaLinks = [
 const mainLinks = [
   { label: "Realizacje", href: "/realizacje" },
   { label: "Sklep", href: "/sklep" },
+  { label: "Blog", href: "/blog" },
   { label: "O nas", href: "/#stats" },
   { label: "FAQ", href: "/#faq" },
   { label: "Kontakt", href: "/#contact" },
