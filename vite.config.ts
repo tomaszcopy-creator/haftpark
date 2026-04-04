@@ -18,4 +18,37 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Core vendor: React + Router + essential libs
+          vendor: [
+            "react",
+            "react-dom",
+            "react-router-dom",
+            "@tanstack/react-query",
+          ],
+          // UI framework: shadcn/radix components
+          ui: [
+            "@radix-ui/react-accordion",
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-tooltip",
+            "@radix-ui/react-toast",
+            "@radix-ui/react-popover",
+            "@radix-ui/react-select",
+            "@radix-ui/react-dropdown-menu",
+            "@radix-ui/react-navigation-menu",
+            "class-variance-authority",
+            "clsx",
+            "tailwind-merge",
+          ],
+          // Animation library
+          motion: ["framer-motion"],
+        },
+      },
+    },
+    // Minimum chunk size to avoid too many small files
+    chunkSizeWarningLimit: 50,
+  },
 }));
