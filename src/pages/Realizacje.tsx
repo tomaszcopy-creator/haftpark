@@ -31,6 +31,19 @@ const gallery = [
 
 const Realizacje = () => {
   useCanonical("/realizacje");
+
+  useEffect(() => {
+    document.title = "Realizacje Haftu Komputerowego | Haft Park";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) {
+      meta.setAttribute("content", "Galeria realizacji haftu komputerowego — ponad 2000 projektów. Haft na odzieży, czapkach, kurtkach i odzieży roboczej. Zobacz nasze prace.");
+    } else {
+      const newMeta = document.createElement("meta");
+      newMeta.name = "description";
+      newMeta.content = "Galeria realizacji haftu komputerowego — ponad 2000 projektów. Haft na odzieży, czapkach, kurtkach i odzieży roboczej. Zobacz nasze prace.";
+      document.head.appendChild(newMeta);
+    }
+  }, []);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const close = useCallback(() => setSelectedIndex(null), []);
