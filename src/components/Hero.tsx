@@ -10,9 +10,13 @@ const Hero = () => {
       <div className="absolute inset-0">
         <img
           src={heroCollage}
+          srcSet="/hero-collage-mobile.webp 768w, /hero-collage.webp 1600w"
+          sizes="100vw"
           alt="Kolaż realizacji haftu komputerowego"
           className="h-full w-full object-cover"
           fetchPriority="high"
+          width={1600}
+          height={900}
         />
         <div className="absolute inset-0 bg-background/85" />
       </div>
