@@ -228,7 +228,7 @@ const HaftNaCzapkach = () => {
                   510 751 008
                 </a>
               </Button>
-              <Button asChild size="lg" variant="outline" <Button asChild size="lg" variant="outline" className="gap-2 border-primary-foreground px-8 text-base text-primary-foreground hover:bg-primary-foreground hover:text-primary">>
+              <Button asChild size="lg" variant="outline" className="gap-2 border-primary-foreground px-8 text-base text-primary-foreground hover:bg-primary-foreground hover:text-primary">
                 <Link to="/#contact">
                   Formularz kontaktowy
                 </Link>
