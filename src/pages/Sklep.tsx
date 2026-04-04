@@ -60,6 +60,19 @@ const wholesaleBrands = [
 
 const Sklep = () => {
   useCanonical("/sklep");
+
+  useEffect(() => {
+    document.title = "Sklep — Bluzy i Odzież do Haftu | Haft Park";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) {
+      meta.setAttribute("content", "Bluzy premium i odzież hurtowa gotowa do haftowania. Polskie materiały 280g/m2. Hurtownie JHK, Fruit of the Loom, Stedman i inne.");
+    } else {
+      const newMeta = document.createElement("meta");
+      newMeta.name = "description";
+      newMeta.content = "Bluzy premium i odzież hurtowa gotowa do haftowania. Polskie materiały 280g/m2. Hurtownie JHK, Fruit of the Loom, Stedman i inne.";
+      document.head.appendChild(newMeta);
+    }
+  }, []);
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
