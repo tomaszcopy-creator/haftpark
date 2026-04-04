@@ -15,6 +15,8 @@ const Haft3D = lazy(() => import("./pages/Haft3D"));
 const HaftNaCzapkach = lazy(() => import("./pages/HaftNaCzapkach"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
 import CookieConsent from "./components/CookieConsent";
 
 const queryClient = new QueryClient();
