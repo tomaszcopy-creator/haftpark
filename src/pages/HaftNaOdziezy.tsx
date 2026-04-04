@@ -122,10 +122,10 @@ const HaftNaOdziezy = () => {
                     </a>
                   </Button>
                   <Button asChild variant="outline" size="lg" className="gap-2 px-8 text-base">
-                    <a href="#contact">
+                    <Link to="/#contact">
                       <ArrowRight className="h-4 w-4" />
                       Wyślij projekt
-                    </a>
+                    </Link>
                   </Button>
                 </motion.div>
               </div>
