@@ -42,7 +42,7 @@ const ContactFormNotificationEmail = ({ name, email, phone, message }: ContactNo
 export const template = {
   component: ContactFormNotificationEmail,
   subject: (data: Record<string, any>) => `Nowe zapytanie od ${data.name || 'klienta'} — ${SITE_NAME}`,
-  to: 'haftpark@onet.pl',
+  to: 'tomaszcopy@gmail.com',
   displayName: 'Powiadomienie o zapytaniu z formularza',
   previewData: { name: 'Jan Kowalski', email: 'jan@example.com', phone: '+48 123 456 789', message: 'Chciałbym zamówić haft na koszulkach firmowych — 50 sztuk.' },
 } satisfies TemplateEntry
