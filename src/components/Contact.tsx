@@ -49,11 +49,13 @@ const Contact = () => {
     setSending(true);
     try {
       const id = crypto.randomUUID();
+
+      // 1. Powiadomienie do właściciela (haftpark@onet.pl — ustawione w szablonie)
       const { error } = await supabase.functions.invoke("send-transactional-email", {
         body: {
           templateName: "contact-form-notification",
           recipientEmail: result.data.email,
-          idempotencyKey: `contact-${id}`,
+          idempotencyKey: `contact-notify-${id}`,
           templateData: {
             name: result.data.name,
             email: result.data.email,
@@ -64,6 +66,16 @@ const Contact = () => {
       });
 
       if (error) throw error;
+
+      // 2. Potwierdzenie do klienta
+      await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "contact-form-confirmation",
+          recipientEmail: result.data.email,
+          idempotencyKey: `contact-confirm-${id}`,
+          templateData: { name: result.data.name },
+        },
+      });
       setSubmitted(true);
       toast({ title: "Wiadomość wysłana!", description: "Skontaktujemy się z Tobą wkrótce." });
     } catch {
