@@ -1,7 +1,5 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useCanonical } from "@/hooks/useCanonical";
-import { motion } from "framer-motion";
+import { useSeoMeta } from "@/hooks/useSeoMeta";
 import { ArrowRight, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
@@ -24,22 +22,11 @@ const fadeUp = {
 };
 
 const Blog = () => {
-  useCanonical("/blog");
-
-  useEffect(() => {
-    document.title = "Blog o hafcie komputerowym | Haft Park";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    const content = "Poradniki, porównania i nowości ze świata haftu komputerowego. Dowiedz się, jak wybrać najlepszą metodę znakowania odzieży dla Twojej firmy.";
-    if (metaDesc) {
-      metaDesc.setAttribute("content", content);
-    } else {
-      const meta = document.createElement("meta");
-      meta.name = "description";
-      meta.content = content;
-      document.head.appendChild(meta);
-    }
-    return () => { document.title = "Haft Park"; };
-  }, []);
+  useSeoMeta({
+    title: "Blog o hafcie komputerowym | Haft Park",
+    description: "Poradniki, porównania i nowości ze świata haftu komputerowego. Dowiedz się, jak wybrać najlepszą metodę znakowania odzieży dla Twojej firmy.",
+    path: "/blog",
+  });
 
   return (
     <div className="min-h-screen bg-background">

@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useCanonical } from "@/hooks/useCanonical";
+import { useSeoMeta, useServiceJsonLd } from "@/hooks/useSeoMeta";
 import { motion } from "framer-motion";
 import { Phone, ArrowRight, HardHat, Trophy, Shirt, Gift, Medal, Tag, Layers, Cpu, Droplets, ShieldCheck, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -39,22 +38,12 @@ const fadeUp = {
 };
 
 const Haft3D = () => {
-  useCanonical("/haft-3d");
-  useEffect(() => {
-    document.title = "Haft 3D na Czapkach i Odzieży | Haft Park Myszków";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute("content", "Efektowny haft 3D na czapkach z daszkiem, bluzach i odzieży roboczej. Wypukłe logo i napisy, które przyciągają wzrok. Zamów próbkę i wycenę bez zobowiązań.");
-    } else {
-      const meta = document.createElement("meta");
-      meta.name = "description";
-      meta.content = "Efektowny haft 3D na czapkach z daszkiem, bluzach i odzieży roboczej. Wypukłe logo i napisy, które przyciągają wzrok. Zamów próbkę i wycenę bez zobowiązań.";
-      document.head.appendChild(meta);
-    }
-    return () => {
-      document.title = "Haft Park";
-    };
-  }, []);
+  useSeoMeta({
+    title: "Haft 3D na Czapkach i Odzieży | Haft Park Myszków",
+    description: "Efektowny haft 3D na czapkach z daszkiem, bluzach i odzieży roboczej. Wypukłe logo i napisy, które przyciągają wzrok. Zamów próbkę i wycenę bez zobowiązań.",
+    path: "/haft-3d",
+  });
+  useServiceJsonLd("Haft 3D na czapkach i odzieży");
 
   return (
     <div className="min-h-screen bg-background">

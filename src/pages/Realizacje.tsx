@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { useCanonical } from "@/hooks/useCanonical";
+import { useSeoMeta } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
@@ -30,20 +30,11 @@ const gallery = [
 ];
 
 const Realizacje = () => {
-  useCanonical("/realizacje");
-
-  useEffect(() => {
-    document.title = "Realizacje Haftu Komputerowego | Haft Park";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute("content", "Galeria realizacji haftu komputerowego — ponad 2000 projektów. Haft na odzieży, czapkach, kurtkach i odzieży roboczej. Zobacz nasze prace.");
-    } else {
-      const newMeta = document.createElement("meta");
-      newMeta.name = "description";
-      newMeta.content = "Galeria realizacji haftu komputerowego — ponad 2000 projektów. Haft na odzieży, czapkach, kurtkach i odzieży roboczej. Zobacz nasze prace.";
-      document.head.appendChild(newMeta);
-    }
-  }, []);
+  useSeoMeta({
+    title: "Realizacje Haftu Komputerowego | Haft Park",
+    description: "Galeria realizacji haftu komputerowego — ponad 2000 projektów. Haft na odzieży, czapkach, kurtkach i odzieży roboczej. Zobacz nasze prace.",
+    path: "/realizacje",
+  });
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const close = useCallback(() => setSelectedIndex(null), []);

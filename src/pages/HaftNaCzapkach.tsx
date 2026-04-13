@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useCanonical } from "@/hooks/useCanonical";
+import { useSeoMeta, useServiceJsonLd } from "@/hooks/useSeoMeta";
 import { motion } from "framer-motion";
 import { Phone, ArrowRight, HardHat, Store, Users, MapPin, Eye, AlignLeft, CircleDot, Shirt, ShoppingBag, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -56,22 +55,12 @@ const faqs = [
 ];
 
 const HaftNaCzapkach = () => {
-  useCanonical("/haft-na-czapkach");
-  useEffect(() => {
-    document.title = "Haft na Czapkach z Daszkiem i Zimowych | Haft Park";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute("content", "Haftujemy logo, napisy i wzory na czapkach z daszkiem, zimowych i beanie. Własny projekt lub gotowy wzór. Realizacja seryjnych zamówień dla firm i sklepów odzieżowych.");
-    } else {
-      const meta = document.createElement("meta");
-      meta.name = "description";
-      meta.content = "Haftujemy logo, napisy i wzory na czapkach z daszkiem, zimowych i beanie. Własny projekt lub gotowy wzór. Realizacja seryjnych zamówień dla firm i sklepów odzieżowych.";
-      document.head.appendChild(meta);
-    }
-    return () => {
-      document.title = "Haft Park";
-    };
-  }, []);
+  useSeoMeta({
+    title: "Haft na Czapkach z Daszkiem i Zimowych | Haft Park",
+    description: "Haftujemy logo, napisy i wzory na czapkach z daszkiem, zimowych i beanie. Własny projekt lub gotowy wzór. Realizacja seryjnych zamówień dla firm i sklepów odzieżowych.",
+    path: "/haft-na-czapkach",
+  });
+  useServiceJsonLd("Haft na czapkach z daszkiem");
 
   return (
     <div className="min-h-screen bg-background">
