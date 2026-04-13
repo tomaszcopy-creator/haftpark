@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useCanonical } from "@/hooks/useCanonical";
+import { useSeoMeta, useServiceJsonLd } from "@/hooks/useSeoMeta";
 import { motion } from "framer-motion";
 import { Phone, ArrowRight, Shirt, HardHat, Trophy, Hotel, Tag, Gift, Leaf, Zap, Scissors as ScissorsIcon, Ruler, ShieldCheck, Sparkles, Palette, Target, Eye, CheckCircle, MessageSquare, Cpu } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -62,22 +61,12 @@ const fadeUp = {
 };
 
 const HaftNaOdziezy = () => {
-  useCanonical("/haft-na-odziezy");
-  useEffect(() => {
-    document.title = "Haft na Odzieży Firmowej i Roboczej | Haft Park";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute("content", "Haft komputerowy logo i napisów na koszulkach, bluzach, polarach i odzieży roboczej. Trwałe znakowanie odzieży dla firm, agencji i marek odzieżowych. Wycena gratis.");
-    } else {
-      const meta = document.createElement("meta");
-      meta.name = "description";
-      meta.content = "Haft komputerowy logo i napisów na koszulkach, bluzach, polarach i odzieży roboczej. Trwałe znakowanie odzieży dla firm, agencji i marek odzieżowych. Wycena gratis.";
-      document.head.appendChild(meta);
-    }
-    return () => {
-      document.title = "Haft Park";
-    };
-  }, []);
+  useSeoMeta({
+    title: "Haft na Odzieży Firmowej i Roboczej | Haft Park",
+    description: "Haft komputerowy logo i napisów na koszulkach, bluzach, polarach i odzieży roboczej. Trwałe znakowanie odzieży dla firm, agencji i marek odzieżowych. Wycena gratis.",
+    path: "/haft-na-odziezy",
+  });
+  useServiceJsonLd("Haft na odzieży firmowej");
 
   return (
     <div className="min-h-screen bg-background">

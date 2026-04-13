@@ -4,16 +4,18 @@ import { motion, useInView } from "framer-motion";
 const stats = [
   { value: 8, suffix: "", label: "Lat doświadczenia" },
   { value: 2000, suffix: "+", label: "Zrealizowanych projektów" },
-  { value: 0, suffix: "", label: "Zwrotów i reklamacji", displayValue: "0" },
+  { value: 0, suffix: "", label: "Zwrotów i reklamacji" },
 ];
 
 const Counter = ({ target, suffix, inView }: { target: number; suffix: string; inView: boolean }) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(target); // Start with target for SSR/Googlebot
 
   useEffect(() => {
     if (!inView) return;
     if (target === 0) { setCount(0); return; }
 
+    // Reset to 0 and animate up
+    setCount(0);
     let start = 0;
     const duration = 2000;
     const increment = target / (duration / 16);
@@ -54,11 +56,7 @@ const Stats = () => {
               className="text-center"
             >
               <p className="text-4xl font-bold text-primary md:text-5xl">
-                {stat.displayValue !== undefined ? (
-                  stat.displayValue
-                ) : (
-                  <Counter target={stat.value} suffix={stat.suffix} inView={inView} />
-                )}
+                <Counter target={stat.value} suffix={stat.suffix} inView={inView} />
               </p>
               <p className="mt-2 text-sm font-medium uppercase tracking-wider text-muted-foreground">
                 {stat.label}

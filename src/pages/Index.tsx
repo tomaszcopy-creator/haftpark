@@ -9,10 +9,15 @@ import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
-import { useCanonical } from "@/hooks/useCanonical";
+import { useSeoMeta } from "@/hooks/useSeoMeta";
 
 const Index = () => {
-  useCanonical("/");
+  useSeoMeta({
+    title: "Haft Park — Profesjonalny Haft Komputerowy | Myszków",
+    description: "Profesjonalny haft komputerowy na odzieży firmowej i reklamowej. 8 lat doświadczenia, 2000+ realizacji. Haft logo od 1 sztuki, nici Madeira i Ariadna. Myszków i cała Polska.",
+    path: "/",
+  });
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
