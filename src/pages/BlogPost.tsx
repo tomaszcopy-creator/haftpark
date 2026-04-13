@@ -1,6 +1,5 @@
-import { useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import { useCanonical } from "@/hooks/useCanonical";
+import { useSeoMeta } from "@/hooks/useSeoMeta";
 import { motion } from "framer-motion";
 import { Phone, ArrowLeft, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -27,22 +26,11 @@ const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? getPostBySlug(slug) : undefined;
 
-  useCanonical(post ? `/blog/${post.slug}` : "/blog");
-
-  useEffect(() => {
-    if (!post) return;
-    document.title = post.metaTitle;
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute("content", post.metaDescription);
-    } else {
-      const meta = document.createElement("meta");
-      meta.name = "description";
-      meta.content = post.metaDescription;
-      document.head.appendChild(meta);
-    }
-    return () => { document.title = "Haft Park"; };
-  }, [post]);
+  useSeoMeta({
+    title: post?.metaTitle ?? "Blog | Haft Park",
+    description: post?.metaDescription ?? "",
+    path: post ? `/blog/${post.slug}` : "/blog",
+  });
 
   if (!post) return <Navigate to="/blog" replace />;
 
