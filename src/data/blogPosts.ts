@@ -16,6 +16,79 @@ export interface BlogSection {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "jak-zamowic-haft-komputerowy",
+    title: "Jak zamówić haft komputerowy — poradnik krok po kroku [2026]",
+    metaTitle: "Jak zamówić haft komputerowy krok po kroku | Haft Park",
+    metaDescription: "Jak zamówić haft komputerowy? Tłumaczymy cały proces: od wysłania logo, przez digitalizację i wycenę, aż po gotową odzież. Zamów w 24h.",
+    excerpt: "Zamawiasz haft komputerowy po raz pierwszy? Tłumaczymy cały proces krok po kroku — od przygotowania logo, przez digitalizację i wycenę, aż po gotową odzież z Twoim logo.",
+    date: "2026-04-20",
+    content: [
+      { type: "p", text: "Zamówienie haftu komputerowego wygląda inaczej niż zakup standardowego produktu. Zanim maszyna haftuje pierwsze ścieg, trzeba przejść przez kilka etapów — digitalizację wzoru, akceptację wizualizacji i ustalenie parametrów zamówienia. Ten poradnik przeprowadzi Cię przez cały proces krok po kroku." },
+
+      { type: "h2", text: "Krok 1: Przygotuj logo lub wzór" },
+      { type: "p", text: "Zanim skontaktujesz się z hafciarnią, przygotuj plik z logo lub wzorem który chcesz wyhaftować. Najlepsze formaty to wektory: AI, EPS lub SVG — są skalowalne i nie tracą jakości. Jeśli nie masz wektora, możesz wysłać plik rastrowy w wysokiej rozdzielczości (minimum 300 DPI). JPEG lub PNG w rozmiarze wizytówki to za mało — takie pliki są za małe do precyzyjnej digitalizacji." },
+      { type: "p", text: "Ważna informacja: haft komputerowy ma swoje ograniczenia. Bardzo małe napisy (poniżej 4 mm wysokości), cienkie linie (poniżej 1 mm) i złożone gradienty nie odwzorowują się dobrze w hafcie. Profesjonalna hafciarnia poinformuje Cię o koniecznych uproszczeniach przed przystąpieniem do pracy." },
+
+      { type: "h2", text: "Krok 2: Wyślij zapytanie ofertowe" },
+      { type: "p", text: "Wyślij e-mail lub formularz kontaktowy z następującymi informacjami:" },
+      { type: "ul", items: [
+        "Plik z logo (AI, EPS, SVG lub JPG/PNG min. 300 DPI)",
+        "Rodzaj odzieży lub akcesorium (np. polówki, koszule, czapki, fartuchy)",
+        "Przybliżona ilość sztuk",
+        "Preferowane miejsce haftu (np. lewa pierś, kołnierzyk, rękaw, czapka z przodu)",
+        "Preferowane kolory nici (jeśli masz konkretne wymagania)",
+        "Termin realizacji (jeśli jest istotny)",
+      ]},
+      { type: "p", text: "W Haft Park odpowiadamy na zapytania w ciągu 24 godzin w dni robocze. Wycena jest bezpłatna i niezobowiązująca." },
+
+      { type: "h2", text: "Krok 3: Digitalizacja wzoru" },
+      { type: "p", text: "Digitalizacja to przetłumaczenie Twojego logo na język maszyny hafciarskiej — tworzenie tzw. pliku punch (programu maszynowego). Specjalista od digitalizacji ręcznie lub półautomatycznie planuje każdy ścieg: kierunek, gęstość, rodzaj wypełnienia, kolejność kolorów." },
+      { type: "p", text: "To jednorazowy koszt: w Haft Park wynosi on 80–150 zł zależnie od złożoności wzoru. Raz przygotowany plik maszynowy pozostaje w bazie i jest używany przy każdym kolejnym zamówieniu — nie płacisz za digitalizację dwa razy." },
+      { type: "p", text: "Czas digitalizacji to zazwyczaj 1–2 dni robocze. W przypadku prostych wzorów (tekst, proste logo) może być krócej." },
+
+      { type: "h2", text: "Krok 4: Akceptacja wizualizacji i próbki" },
+      { type: "p", text: "Przed realizacją całego zamówienia hafciarnia powinna przedstawić Ci wizualizację lub — przy większych zamówieniach — fizyczną próbkę haftu na kawałku materiału. To kluczowy moment: sprawdź dokładnie kolory nici, rozmiar wzoru, czytelność napisów i ogólny wygląd." },
+      { type: "p", text: "Jeśli coś nie odpowiada Twoim oczekiwaniom — np. napis jest za mały albo kolor nici nie pasuje do koloru tkaniny — zgłoś to przed akceptacją. Korekty na tym etapie są bezpłatne lub kosztują symboliczną kwotę. Zmiany po akceptacji i rozpoczęciu produkcji są już kosztowne." },
+
+      { type: "h2", text: "Krok 5: Realizacja zamówienia" },
+      { type: "p", text: "Po akceptacji wizualizacji hafciarnia przystępuje do realizacji. Czas produkcji zależy od ilości sztuk i obłożenia hafciarni. Standardowe terminy:" },
+      { type: "ul", items: [
+        "Do 20 sztuk: 3–5 dni roboczych",
+        "20–100 sztuk: 5–10 dni roboczych",
+        "Powyżej 100 sztuk: 10–15 dni roboczych",
+        "Usługa ekspresowa (jeśli dostępna): 1–2 dni robocze, wyższy koszt",
+      ]},
+      { type: "p", text: "Jeśli zamawiasz haft na własnej odzieży (np. dostarczasz kurtki do haftu), zaplanuj czas na ich transport do hafciarni i z powrotem. Haft Park realizuje zamówienia dla klientów z całej Polski — wysyłka kurierem w obie strony." },
+
+      { type: "h2", text: "Krok 6: Odbiór i kontrola jakości" },
+      { type: "p", text: "Po otrzymaniu zamówienia sprawdź każdą sztukę pod kątem: jakości haftu (brak luźnych nici, równe ściegi), zgodności kolorów z akceptowaną wizualizacją, poprawności rozmieszczenia wzoru i braku uszkodzeń materiału." },
+      { type: "p", text: "Profesjonalna hafciarnia kontroluje jakość przed wysyłką. Jeśli mimo to znajdziesz wadliwą sztukę, skontaktuj się niezwłocznie — reklamacje są standardem w branży i nie powinny sprawiać problemów." },
+
+      { type: "h2", text: "Ile kosztuje haft komputerowy — podsumowanie kosztów" },
+      { type: "ul", items: [
+        "Digitalizacja wzoru: 80–150 zł (jednorazowo)",
+        "Haft na jednej sztuce: 8–25 zł (zależy od rozmiaru wzoru i nakładu)",
+        "Przy zamówieniu 50+ sztuk: cena jednostkowa niższa o 20–30%",
+        "Wysyłka kurierem: standardowe stawki kurierskie",
+      ]},
+      { type: "p", text: "Przykład: 30 polówek z haftowanym logo (wzór ok. 5×5 cm) — digitalizacja 100 zł + 30 × 14 zł = 520 zł netto. Przy kolejnym zamówieniu tych samych 30 sztuk płacisz już tylko 30 × 14 zł = 420 zł netto." },
+
+      { type: "h2", text: "Jak zamówić haft komputerowy w Haft Park" },
+      { type: "p", text: "Haft Park to hafciarnia z Myszkowa obsługująca firmy z całego Śląska i Polski. Specjalizujemy się w hafcie komputerowym dla gastronomii, hotelarstwa, firm produkcyjnych i usługowych. Zamówienia realizujemy w całej Polsce — w tym dla klientów z Częstochowy, Katowic, Sosnowca i Dąbrowy Górniczej." },
+      { type: "p", text: "Aby zamówić haft: wyślij logo i opis zamówienia na nasz adres e-mail lub przez formularz kontaktowy. Wrócimy z wyceną i wizualizacją w ciągu 24 godzin — bezpłatnie i bez zobowiązań." },
+
+      { type: "h2", text: "Najczęściej zadawane pytania" },
+      { type: "h3", text: "Czy mogę zamówić haft na własnej odzieży?" },
+      { type: "p", text: "Tak. Możesz dostarczyć własną odzież do haftu — kurierem lub osobiście. Hafciarnia nałoży haft i odeśle gotowe sztuki. To popularne rozwiązanie gdy masz już odzież roboczą lub chcesz wyhaftować konkretny model." },
+      { type: "h3", text: "Jaka jest minimalna ilość zamówienia?" },
+      { type: "p", text: "W Haft Park przyjmujemy zamówienia od 1 sztuki. Przy małych ilościach cena jednostkowa jest wyższa, ale nie ma żadnego progu minimalnego. Rabaty ilościowe zaczynają się od 20–50 sztuk." },
+      { type: "h3", text: "Jak długo trwa realizacja zamówienia?" },
+      { type: "p", text: "Standardowo 5–10 dni roboczych od akceptacji wizualizacji. Czas może się różnić zależnie od aktualnego obłożenia hafciarni i złożoności zamówienia. Na życzenie realizujemy zamówienia ekspresowe." },
+      { type: "h3", text: "Co jeśli nie mam logo w formacie wektorowym?" },
+      { type: "p", text: "Możesz przesłać logo jako zdjęcie lub skan w dobrej jakości. W takim przypadku digitalizacja może być droższa lub dłuższa, bo specjalista musi odtworzyć wzór. Możemy też pomóc z wektoryzacją logo — zapytaj przy składaniu zamówienia." },
+    ],
+  },
+  {
     slug: "haft-komputerowy-vs-nadruk",
     title: "Haft komputerowy czy nadruk — co wybrać dla firmy? [Poradnik 2026]",
     metaTitle: "Haft komputerowy czy nadruk — co wybrać dla firmy? [Poradnik 2026] | Haft Park",
