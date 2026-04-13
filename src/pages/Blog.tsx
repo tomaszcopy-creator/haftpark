@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
+import { motion } from "framer-motion";
 import { ArrowRight, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
