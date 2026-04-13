@@ -44,6 +44,10 @@ const Hero = () => {
             Profesjonalny haft
             <br />
             <span className="text-primary">komputerowy dla firm</span>
+            <br />
+            <span className="text-lg font-medium tracking-normal text-muted-foreground md:text-2xl lg:text-3xl">
+              — Myszków i cała Polska
+            </span>
           </motion.h1>
 
           <motion.p
