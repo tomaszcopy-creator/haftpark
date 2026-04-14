@@ -26,7 +26,7 @@ export const blogPosts: BlogPost[] = [
       { type: "p", text: "Zamówienie haftu komputerowego wygląda inaczej niż zakup standardowego produktu. Zanim maszyna haftuje pierwsze ścieg, trzeba przejść przez kilka etapów — digitalizację wzoru, akceptację wizualizacji i ustalenie parametrów zamówienia. Ten poradnik przeprowadzi Cię przez cały proces krok po kroku." },
 
       { type: "h2", text: "Krok 1: Przygotuj logo lub wzór" },
-      { type: "p", text: "Zanim skontaktujesz się z hafciarnią, przygotuj plik z logo lub wzorem który chcesz wyhaftować. Najlepsze formaty to wektory: AI, EPS lub SVG — są skalowalne i nie tracą jakości. Jeśli nie masz wektora, możesz wysłać plik rastrowy w wysokiej rozdzielczości (minimum 300 DPI). JPEG lub PNG w rozmiarze wizytówki to za mało — takie pliki są za małe do precyzyjnej digitalizacji." },
+      { type: "p", text: "Zanim skontaktujesz się z hafciarnią, przygotuj plik z logo lub wzorem, który chcesz wyhaftować. Najlepsze formaty to wektory: AI, EPS lub SVG — są skalowalne i nie tracą jakości. Jeśli nie masz wektora, możesz wysłać plik rastrowy w wysokiej rozdzielczości (minimum 300 DPI). JPEG lub PNG w rozmiarze wizytówki to za mało — takie pliki są za małe do precyzyjnej digitalizacji." },
       { type: "p", text: "Ważna informacja: haft komputerowy ma swoje ograniczenia. Bardzo małe napisy (poniżej 4 mm wysokości), cienkie linie (poniżej 1 mm) i złożone gradienty nie odwzorowują się dobrze w hafcie. Profesjonalna hafciarnia poinformuje Cię o koniecznych uproszczeniach przed przystąpieniem do pracy." },
 
       { type: "h2", text: "Krok 2: Wyślij zapytanie ofertowe" },
@@ -79,7 +79,7 @@ export const blogPosts: BlogPost[] = [
 
       { type: "h2", text: "Najczęściej zadawane pytania" },
       { type: "h3", text: "Czy mogę zamówić haft na własnej odzieży?" },
-      { type: "p", text: "Tak. Możesz dostarczyć własną odzież do haftu — kurierem lub osobiście. Hafciarnia nałoży haft i odeśle gotowe sztuki. To popularne rozwiązanie gdy masz już odzież roboczą lub chcesz wyhaftować konkretny model." },
+      { type: "p", text: "Tak. Możesz dostarczyć własną odzież do haftu — kurierem lub osobiście. Hafciarnia nałoży haft i odeśle gotowe sztuki. To popularne rozwiązanie, gdy masz już odzież roboczą lub chcesz wyhaftować konkretny model." },
       { type: "h3", text: "Jaka jest minimalna ilość zamówienia?" },
       { type: "p", text: "W Haft Park przyjmujemy zamówienia od 1 sztuki. Przy małych ilościach cena jednostkowa jest wyższa, ale nie ma żadnego progu minimalnego. Rabaty ilościowe zaczynają się od 20–50 sztuk." },
       { type: "h3", text: "Jak długo trwa realizacja zamówienia?" },
@@ -96,7 +96,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Haft komputerowy czy nadruk? Porównujemy trwałość, koszty i efekt wizualny. Sprawdź która metoda znakowania odzieży firmowej jest lepsza dla Twojej firmy.",
     date: "2026-04-05",
     content: [
-      { type: "p", text: "Haft komputerowy czy nadruk — to pytanie zadaje sobie każdy przedsiębiorca zamawiający odzież firmową. Krótka odpowiedź: haft wytrzymuje 500+ prań, nadruk termotransfer zaledwie 20–30. Ale to nie jedyna różnica. Oto kompletne porównanie które pomoże Ci podjąć świadomą decyzję." },
+      { type: "p", text: "Haft komputerowy czy nadruk — to pytanie zadaje sobie każdy przedsiębiorca zamawiający odzież firmową. Krótka odpowiedź: haft wytrzymuje 500+ prań, nadruk termotransfer zaledwie 20–30. Ale to nie jedyna różnica. Oto kompletne porównanie, które pomoże Ci podjąć świadomą decyzję." },
 
       { type: "h2", text: "Trwałość — haft komputerowy wygrywa bezapelacyjnie" },
       { type: "p", text: "Haft komputerowy polega na wpleceniu nici bezpośrednio w strukturę tkaniny. Logo jest niemal niezniszczalne — nie blaknie pod wpływem UV, nie łuszczy się, nie pęka i nie odkształca po praniu." },
@@ -142,7 +142,7 @@ export const blogPosts: BlogPost[] = [
       { type: "p", text: "Żadna z tych technologii nie dorównuje haftowi (500+ prań). Jedynym ograniczeniem haftu jest brak możliwości odwzorowania gradientów i fotorealistycznych grafik." },
 
       { type: "h2", text: "Haft na czapkach i naszywki — alternatywy do rozważenia" },
-      { type: "p", text: "Warto wiedzieć że haft komputerowy to nie tylko odzież. Jeśli szukasz trwałego znakowania — sprawdź również haft na czapkach z daszkiem oraz naszywki haftowane na zamówienie. Oba rozwiązania oferują tę samą trwałość co haft na odzieży, często w niższej cenie jednostkowej." },
+      { type: "p", text: "Warto wiedzieć, że haft komputerowy to nie tylko odzież. Jeśli szukasz trwałego znakowania — sprawdź również haft na czapkach z daszkiem oraz naszywki haftowane na zamówienie. Oba rozwiązania oferują tę samą trwałość co haft na odzieży, często w niższej cenie jednostkowej." },
 
       { type: "h2", text: "Haft komputerowy Myszków i okolice" },
       { type: "p", text: "Haft Park to hafciarnia z Myszkowa obsługująca klientów z całego Śląska i Polski. Realizujemy zamówienia dla firm z Częstochowy, Katowic, Sosnowca, Dąbrowy Górniczej i całego regionu. Wyślij projekt — wrócimy z wyceną w 24 godziny." },
