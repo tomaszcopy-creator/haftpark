@@ -16,6 +16,88 @@ export interface BlogSection {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "digitalizacja-wzoru-do-haftu",
+    title: "Digitalizacja wzoru do haftu — co to jest i ile kosztuje [Poradnik 2026]",
+    metaTitle: "Digitalizacja wzoru do haftu — cena i proces | Haft Park",
+    metaDescription: "Czym jest digitalizacja wzoru do haftu i ile kosztuje? Poznaj cały proces — od pliku do gotowego wzoru maszynowego. Bezpłatna wycena od Haft Park Myszków.",
+    excerpt: "Digitalizacja wzoru do haftu to kluczowy etap każdego zamówienia hafciarskiego. Dowiedz się czym jest, jak przebiega krok po kroku i ile kosztuje w 2026 roku.",
+    date: "2026-04-26",
+    content: [
+      { type: "p", text: "Digitalizacja wzoru do haftu to pierwszy i najważniejszy etap każdego zamówienia hafciarskiego. Zanim maszyna wykona pierwsze ściegi, specjalista musi przetłumaczyć Twoje logo lub wzór na język programu maszynowego. Ten artykuł wyjaśnia, czym dokładnie jest digitalizacja wzoru do haftu, jak przebiega ten proces i ile kosztuje — abyś wiedział, czego się spodziewać zamawiając haft komputerowy." },
+
+      { type: "h2", text: "Co to jest digitalizacja wzoru do haftu?" },
+      { type: "p", text: "Digitalizacja (zwana też punchingiem lub programowaniem haftu) to proces tworzenia pliku maszynowego (.DST, .PES, .EMB) na podstawie grafiki lub logo. Plik ten zawiera precyzyjne instrukcje dla maszyny hafciarskiej: gdzie stawiać igłę, jakiego używać ściegu, w jakiej kolejności przełączać kolory nici i z jaką gęstością wypełniać poszczególne obszary wzoru." },
+      { type: "p", text: "W uproszczeniu: to jakby 'przetłumaczyć' obraz na serię kroków, które maszyna wykonuje sekwencyjnie — ścieg po ściegu, wiersz po wierszu. Dobra digitalizacja wzoru do haftu sprawia, że gotowy haft jest czysty, trwały i wiernie odwzorowuje projekt. Zła digitalizacja — nawet na najdroższej maszynie — da słaby, nieestetyczny efekt." },
+
+      { type: "h3", text: "Czym zajmuje się digitalizator?" },
+      { type: "p", text: "Digitalizator to specjalista łączący wiedzę techniczną z wyczuciem estetycznym. Jego zadaniem nie jest tylko przerysowanie wzoru, ale przede wszystkim dostosowanie go do możliwości haftu komputerowego. W trakcie pracy:" },
+      { type: "ul", items: [
+        "Określa sekwencję kolorów nici — maszyna haftuje jeden kolor na raz",
+        "Dobiera rodzaje ściegów: satin (satynowy), fill (wypełnienie), running stitch (konturowy)",
+        "Ustawia kąt i gęstość ściegów dla optymalnego wyglądu i trwałości",
+        "Planuje kolejność obszarów, aby unikać przeskakiwania nici na rewersie",
+        "Upraszcza detale, których haft nie odwzoruje — np. cienkie linie, gradienty",
+        "Dodaje stabilizujące ściegi podkładowe (underlay) pod każdą warstwę wzoru",
+      ]},
+      { type: "p", text: "Dobry digitalizator wie, jak sprawić, żeby haft wyglądał lepiej niż oryginalny plik graficzny. Odpowiednio dobrane kierunki i rodzaje ściegów potrafią nadać wzorowi głębię i trójwymiarowy efekt niemożliwy do uzyskania przez druk." },
+
+      { type: "h2", text: "Jak przebiega digitalizacja wzoru do haftu — krok po kroku" },
+      { type: "p", text: "Znajomość poszczególnych etapów digitalizacji pomaga lepiej rozumieć harmonogram zamówienia i wiedzieć, za co dokładnie płacisz." },
+      { type: "ul", items: [
+        "Analiza projektu: Digitalizator przegląda logo lub wzór, oceniając złożoność, liczbę kolorów i potencjalne problemy techniczne. Na tym etapie może zaproponować uproszczenia niezbędne do uzyskania dobrego haftu.",
+        "Tworzenie pliku maszynowego: Używając specjalistycznego oprogramowania (np. Wilcom, Hatch, Tajima DG/ML), specjalista ręcznie lub półautomatycznie mapuje każdy element wzoru — definiując ściegi, kierunki i sekwencje kolorów.",
+        "Symulacja i podgląd: Program generuje wirtualny podgląd haftu — można ocenić efekt przed wyhaftowaniem na materiale.",
+        "Testowe wyhaftowanie: Przy skomplikowanych wzorach lub dużych zamówieniach wykonuje się próbny haft na materiale, aby upewnić się, że wygląda zgodnie z oczekiwaniami klienta.",
+        "Korekty i akceptacja: Jeśli coś wymaga poprawek — rozmiar, kolory, czytelność napisów — digitalizator wprowadza zmiany przed realizacją właściwego zamówienia.",
+        "Archiwizacja pliku: Gotowy plik maszynowy zostaje zapisany w bazie hafciarni. Przy kolejnych zamówieniach tego samego wzoru nie trzeba digitalizować od nowa.",
+      ]},
+
+      { type: "h2", text: "Ile kosztuje digitalizacja wzoru do haftu?" },
+      { type: "p", text: "Koszt digitalizacji wzoru do haftu w Polsce wynosi zazwyczaj 40–200 zł, zależnie od złożoności projektu. W Haft Park ceny zaczynają się od 80 zł za proste logo lub napis i sięgają 150 zł przy rozbudowanych, wielokolorowych wzorach z drobnymi detalami i małym tekstem." },
+      { type: "p", text: "Kluczowa zasada: digitalizacja to koszt jednorazowy. Raz przygotowany plik maszynowy zostaje w bazie hafciarni i jest używany przy każdym kolejnym zamówieniu bez żadnych dodatkowych opłat. Przykład: digitalizacja za 100 zł rozłożona na 10 zamówień po 20 sztuk to zaledwie 50 groszy na sztukę dodatkowego kosztu. Przy regularnych zamówieniach ten koszt staje się pomijalny." },
+
+      { type: "h3", text: "Co wpływa na cenę digitalizacji wzoru do haftu?" },
+      { type: "ul", items: [
+        "Złożoność wzoru: proste logo z 2–3 kolorami jest tańsze w digitalizacji niż rozbudowana grafika z wieloma elementami",
+        "Liczba kolorów nici: każdy kolor wymaga osobnego oprogramowania sekwencji i przełączenia nici",
+        "Rozmiar haftu: większy obszar wypełnienia to więcej ściegów i więcej czasu pracy specjalisty",
+        "Małe napisy: tekst poniżej 5–6 mm wysokości wymaga specjalnych ściegów i szczególnej precyzji",
+        "Haft 3D (puff embroidery): wymaga dodatkowej pianki podkładowej i odmiennego podejścia do całej digitalizacji",
+        "Termin ekspresowy: część hafciarni pobiera dopłatę za pilną digitalizację w ciągu 24 godzin",
+      ]},
+
+      { type: "h2", text: "Jakie pliki są potrzebne do digitalizacji wzoru?" },
+      { type: "p", text: "Do digitalizacji wzoru do haftu najlepszy jest plik wektorowy: AI (Adobe Illustrator), EPS lub SVG. Pliki wektorowe są skalowalne i zawierają precyzyjne informacje o kształtach, kolorach i fontach — digitalizator może dokładnie odwzorować każdy element, niezależnie od rozmiaru haftu." },
+      { type: "p", text: "Jeśli nie masz wektora, możesz dostarczyć plik rastrowy w wysokiej rozdzielczości — minimum 300 DPI, preferowane 600 DPI lub więcej. JPEG, PNG lub TIFF w odpowiednim rozmiarze zazwyczaj wystarczy. Unikaj pobierania logo ze stron internetowych — grafiki webowe mają rozdzielczość 72–96 DPI i są zbyt małe do precyzyjnej digitalizacji. Więcej o przygotowaniu pliku przeczytasz w naszym poradniku, jak przygotować logo do haftu." },
+      { type: "p", text: "Pamiętaj: nawet idealny plik graficzny nie sprawi, że haft odwzoruje każdy detal. Gradienty, cieniowania i fotorealistyczne elementy nie nadają się do haftu komputerowego — dobry specjalista omówi z Tobą konieczne uproszczenia przed przystąpieniem do pracy." },
+
+      { type: "h2", text: "Digitalizacja wzoru do haftu a jakość końcowego efektu" },
+      { type: "p", text: "Digitalizacja to nie tylko kwestia techniczna — to sztuka. Dwa pliki maszynowe oparte na tym samym logo mogą dać zupełnie różne efekty na materiale. Na jakość gotowego haftu wpływa przede wszystkim sposób, w jaki digitalizator rozwiązał kilka kluczowych problemów technicznych." },
+
+      { type: "h3", text: "Underlay — fundament dobrego haftu" },
+      { type: "p", text: "Underlay to warstwa ściegów wykonywana przed właściwym wzorem. Stabilizuje materiał, redukuje zniekształcenia i poprawia wygląd górnej warstwy haftu. Brak odpowiedniego underlaya powoduje, że haft na miękkich materiałach — polarze, softshell, dzianinie — wychodzi pofalowany i traci formę po kilku praniach. To jeden z najczęstszych błędów taniej, automatycznej digitalizacji." },
+
+      { type: "h3", text: "Kompensacja i gęstość ściegów" },
+      { type: "p", text: "Materiał podczas haftowania lekko się ściska pod naciskiem igły i stopki. Dobry digitalizator uwzględnia to z góry, aby wzór nie wyszedł zniekształcony ani nie wysunął się poza zaplanowany obszar. Zbyt gęste ściegi powodują sztywność i marszczenie tkaniny, zbyt rzadkie — prześwitywanie podłoża przez haft. Znalezienie optymalnej gęstości dla konkretnego materiału to jeden z kluczowych elementów profesjonalnej digitalizacji wzoru." },
+      { type: "p", text: "Tania, w pełni automatyczna digitalizacja przez programy AI bez ludzkiej interwencji często pomija te niuanse. Efekt wygląda amatorsko nawet przy dobrej maszynie. Dlatego warto wybierać hafciarnie, które digitalizują ręcznie i posiadają potwierdzone doświadczenie." },
+
+      { type: "h2", text: "Digitalizacja wzoru do haftu — Haft Park Myszków i cały Śląsk" },
+      { type: "p", text: "W Haft Park digitalizacja wykonywana jest przez doświadczonych specjalistów — każdy wzór trafia w ręce człowieka, nie algorytmu. Obsługujemy firmy z Myszkowa, Częstochowy, Katowic, Sosnowca, Dąbrowy Górniczej i całej Polski. Wysyłka materiałów do haftu i gotowych wyrobów odbywa się kurierem — nie musisz przyjeżdżać osobiście." },
+      { type: "p", text: "Specjalizujemy się w digitalizacji wzorów do haftu na polówkach, koszulach, czapkach, fartuchach, odzieży roboczej BHP i wielu innych rodzajach odzieży. Realizujemy zamówienia dla restauracji, hoteli, firm produkcyjnych, służby zdrowia i klubów sportowych. Jeśli masz logo, my zamienimy je w profesjonalny, trwały haft." },
+      { type: "p", text: "Zapraszamy do kontaktu — wyślij logo i opis zamówienia, a przygotujemy bezpłatną wycenę digitalizacji i haftu w ciągu 24 godzin." },
+
+      { type: "h2", text: "Najczęściej zadawane pytania o digitalizację wzoru do haftu" },
+      { type: "h3", text: "Czy digitalizacja wzoru do haftu to jednorazowy koszt?" },
+      { type: "p", text: "Tak. Digitalizacja jest jednorazowa — płacisz za nią tylko przy pierwszym zamówieniu danego wzoru. Przygotowany plik maszynowy zostaje zapisany w bazie hafciarni i jest używany przy każdym kolejnym zamówieniu bez żadnych dodatkowych opłat. Jeśli po roku zamówisz kolejną partię odzieży z tym samym logo, nie poniesiesz kosztu digitalizacji." },
+      { type: "h3", text: "Ile trwa digitalizacja wzoru do haftu?" },
+      { type: "p", text: "Standardowy czas digitalizacji to 1–2 dni robocze od dostarczenia pliku. Proste wzory — tekst, proste logo z 2–3 kolorami — mogą być gotowe tego samego lub następnego dnia. Skomplikowane projekty z wieloma kolorami i drobnymi detalami wymagają 2–3 dni. W Haft Park realizujemy digitalizację ekspresową w ciągu 24 godzin na życzenie — zapytaj przy składaniu zamówienia." },
+      { type: "h3", text: "Czy mogę otrzymać plik maszynowy do własnego użytku?" },
+      { type: "p", text: "To zależy od polityki hafciarni. Część firm udostępnia pliki maszynowe klientom (zazwyczaj za dodatkową opłatą), inne traktują je jako własność intelektualną studia digitalizacji. W Haft Park możesz zapytać o tę opcję przy składaniu zamówienia. Pamiętaj jednak, że każda marka maszyny hafciarskiej używa nieco innego formatu pliku — plik stworzony dla jednej marki może wymagać konwersji." },
+      { type: "h3", text: "Czy każde logo nadaje się do haftu komputerowego?" },
+      { type: "p", text: "Większość logo można wyhaftować, ale niektóre wymagają uproszczeń. Problematyczne są: bardzo cienkie linie (poniżej 1–2 mm), drobny tekst (poniżej 4 mm wysokości), gradienty kolorów oraz fotorealistyczne grafiki. Dobra hafciarnia przed przystąpieniem do digitalizacji poinformuje Cię o koniecznych zmianach i zaproponuje optymalne rozwiązania — tak, aby haft wyglądał profesjonalnie i był trwały przez lata. Masz wątpliwości? Wyślij logo do Haft Park — bezpłatnie ocenimy, jak najlepiej je wyhaftować." },
+    ],
+  },
+  {
     slug: "jak-zamowic-haft-komputerowy",
     title: "Jak zamówić haft komputerowy — poradnik krok po kroku [2026]",
     metaTitle: "Jak zamówić haft komputerowy krok po kroku | Haft Park",
