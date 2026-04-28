@@ -1,5 +1,76 @@
 /* Fonts loaded asynchronously in index.html */
 
+/* ── PAGE LOADER ─────────────────────────────────────────── */
+.hp-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(0 0% 99%);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.hp-loader--out {
+  opacity: 0;
+  pointer-events: none;
+}
+.hp-loader__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.hp-loader__needle-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hp-loader__needle {
+  color: hsl(0 65% 33%);
+  animation: hp-needle-stitch 0.9s ease-in-out both;
+}
+.hp-loader__thread {
+  width: 1.5px;
+  background: hsl(0 65% 33% / 0.35);
+  animation: hp-thread-grow 0.9s ease-out both;
+}
+.hp-loader__brand {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: hsl(0 0% 12%);
+  text-transform: uppercase;
+  animation: hp-fade-in 0.4s ease 0.3s both;
+}
+
+@keyframes hp-needle-stitch {
+  0%   { transform: translateY(0); }
+  14%  { transform: translateY(18px); }
+  28%  { transform: translateY(0); }
+  43%  { transform: translateY(18px); }
+  57%  { transform: translateY(0); }
+  72%  { transform: translateY(18px); }
+  86%  { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
+@keyframes hp-thread-grow {
+  0%   { height: 0px; }
+  14%  { height: 8px; }
+  28%  { height: 8px; }
+  43%  { height: 18px; }
+  57%  { height: 18px; }
+  72%  { height: 28px; }
+  100% { height: 32px; }
+}
+@keyframes hp-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* ── END PAGE LOADER ─────────────────────────────────────── */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

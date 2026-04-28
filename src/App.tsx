@@ -18,11 +18,13 @@ const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 import CookieConsent from "./components/CookieConsent";
+import Loader from "./components/Loader";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
+    <Loader />
     <TooltipProvider>
       <Toaster />
       <Sonner />
