@@ -1,4 +1,4 @@
-import { useSeoMeta, useServiceJsonLd } from "@/hooks/useSeoMeta";
+import { useSeoMeta, useServiceJsonLd, useBreadcrumbJsonLd } from "@/hooks/useSeoMeta";
 import { motion } from "framer-motion";
 import { Phone, ArrowRight, HardHat, Store, Users, MapPin, Eye, AlignLeft, CircleDot, Shirt, ShoppingBag, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -61,6 +61,10 @@ const HaftNaCzapkach = () => {
     path: "/haft-na-czapkach",
   });
   useServiceJsonLd("Haft na czapkach z daszkiem");
+  useBreadcrumbJsonLd([
+    { name: "Haft Park", url: "https://www.haftpark.com/" },
+    { name: "Haft na czapkach", url: "https://www.haftpark.com/haft-na-czapkach" },
+  ]);
 
   return (
     <div className="min-h-screen bg-background">

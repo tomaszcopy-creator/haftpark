@@ -1,4 +1,4 @@
-import { useSeoMeta, useServiceJsonLd } from "@/hooks/useSeoMeta";
+import { useSeoMeta, useServiceJsonLd, useBreadcrumbJsonLd } from "@/hooks/useSeoMeta";
 import { motion } from "framer-motion";
 import { Phone, ArrowRight, HardHat, Trophy, Shirt, Gift, Medal, Tag, Layers, Cpu, Droplets, ShieldCheck, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -44,6 +44,10 @@ const Haft3D = () => {
     path: "/haft-3d",
   });
   useServiceJsonLd("Haft 3D na czapkach i odzieży");
+  useBreadcrumbJsonLd([
+    { name: "Haft Park", url: "https://www.haftpark.com/" },
+    { name: "Haft 3D", url: "https://www.haftpark.com/haft-3d" },
+  ]);
 
   return (
     <div className="min-h-screen bg-background">

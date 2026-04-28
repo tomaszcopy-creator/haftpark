@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
+import { useSeoMeta } from "@/hooks/useSeoMeta";
 
 type Status = "loading" | "valid" | "already" | "invalid" | "success" | "error";
 
 const Unsubscribe = () => {
+  useSeoMeta({ title: "Wypisanie z listy | Haft Park", description: "", path: "/unsubscribe", noindex: true });
   const [searchParams] = useSearchParams();
   const token = searchParams.get("token");
   const [status, setStatus] = useState<Status>("loading");

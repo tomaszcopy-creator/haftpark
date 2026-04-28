@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useSeoMeta } from "@/hooks/useSeoMeta";
+import { useSeoMeta, useBreadcrumbJsonLd } from "@/hooks/useSeoMeta";
 import { motion } from "framer-motion";
 import { ArrowRight, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -28,6 +28,10 @@ const Blog = () => {
     description: "Poradniki, porównania i nowości ze świata haftu komputerowego. Dowiedz się, jak wybrać najlepszą metodę znakowania odzieży dla Twojej firmy.",
     path: "/blog",
   });
+  useBreadcrumbJsonLd([
+    { name: "Haft Park", url: "https://www.haftpark.com/" },
+    { name: "Blog", url: "https://www.haftpark.com/blog" },
+  ]);
 
   return (
     <div className="min-h-screen bg-background">

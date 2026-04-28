@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { useSeoMeta } from "@/hooks/useSeoMeta";
+import { useSeoMeta, useBreadcrumbJsonLd } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
@@ -35,6 +35,10 @@ const Realizacje = () => {
     description: "Galeria realizacji haftu komputerowego — ponad 2000 projektów. Haft na odzieży, czapkach, kurtkach i odzieży roboczej. Zobacz nasze prace.",
     path: "/realizacje",
   });
+  useBreadcrumbJsonLd([
+    { name: "Haft Park", url: "https://www.haftpark.com/" },
+    { name: "Realizacje", url: "https://www.haftpark.com/realizacje" },
+  ]);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const close = useCallback(() => setSelectedIndex(null), []);

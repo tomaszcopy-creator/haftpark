@@ -1,5 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import { useSeoMeta } from "@/hooks/useSeoMeta";
+import { useSeoMeta, useArticleJsonLd, useBreadcrumbJsonLd } from "@/hooks/useSeoMeta";
 import { motion } from "framer-motion";
 import { Phone, ArrowLeft, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -31,6 +31,19 @@ const BlogPost = () => {
     description: post?.metaDescription ?? "",
     path: post ? `/blog/${post.slug}` : "/blog",
   });
+
+  useArticleJsonLd({
+    headline: post?.title ?? "",
+    description: post?.metaDescription ?? "",
+    datePublished: post?.date ?? "",
+    url: `https://www.haftpark.com/blog/${post?.slug ?? ""}`,
+  });
+
+  useBreadcrumbJsonLd([
+    { name: "Haft Park", url: "https://www.haftpark.com/" },
+    { name: "Blog", url: "https://www.haftpark.com/blog" },
+    { name: post?.title ?? "", url: `https://www.haftpark.com/blog/${post?.slug ?? ""}` },
+  ]);
 
   if (!post) return <Navigate to="/blog" replace />;
 
