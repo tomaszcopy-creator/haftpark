@@ -33,7 +33,7 @@ const Stats = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="stats" className="border-y border-border bg-secondary/50 py-16 md:py-20" ref={ref}>
+    <section id="stats" className="border-y border-border bg-secondary/50 py-12 md:py-16" ref={ref}>
       <div className="container">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-3">
           {stats.map((stat, i) => (

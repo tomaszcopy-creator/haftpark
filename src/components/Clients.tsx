@@ -25,7 +25,7 @@ const duplicated = [...clients, ...clients];
 
 const Clients = () => {
   return (
-    <section className="border-t border-border/40 bg-muted/30 py-16 md:py-24">
+    <section className="border-t border-border/40 bg-muted/30 py-10 md:py-14">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

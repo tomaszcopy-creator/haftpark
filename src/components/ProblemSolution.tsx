@@ -21,7 +21,7 @@ const ProblemSolution = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-20 md:py-28" ref={ref}>
+    <section className="py-14 md:py-20" ref={ref}>
       <div className="container">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

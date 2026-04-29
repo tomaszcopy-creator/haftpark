@@ -39,7 +39,7 @@ const FAQ = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="faq" className="bg-secondary/50 py-20 md:py-28" ref={ref}>
+    <section id="faq" className="bg-secondary/50 py-14 md:py-20" ref={ref}>
       <div className="container">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

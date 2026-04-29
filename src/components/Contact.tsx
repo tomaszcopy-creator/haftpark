@@ -90,7 +90,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28" ref={ref}>
+    <section id="contact" className="py-14 md:py-20" ref={ref}>
       <div className="container">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

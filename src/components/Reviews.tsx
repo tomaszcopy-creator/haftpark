@@ -49,7 +49,7 @@ const GoogleLogo = () => (
 );
 
 const Reviews = () => (
-  <section className="bg-background py-20 md:py-28">
+  <section className="bg-background py-14 md:py-20">
     <div className="container mx-auto max-w-5xl px-4">
       <div className="mb-12 text-center">
         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary">Opinie klientów</p>
