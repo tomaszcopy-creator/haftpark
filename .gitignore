@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Google credentials (nigdy nie commituj)
+haftpark-seo-*.json
+client_secret*.json
+gsc_token.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

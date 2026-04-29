@@ -78,6 +78,9 @@ const Contact = () => {
       });
       setSubmitted(true);
       toast({ title: "Wiadomość wysłana!", description: "Skontaktujemy się z Tobą wkrótce." });
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "contact_form_submitted", { event_category: "contact" });
+      }
     } catch {
       toast({
         title: "Błąd wysyłania",
