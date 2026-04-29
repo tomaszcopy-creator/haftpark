@@ -57,7 +57,7 @@ const Reviews = () => (
           Co mówią nasi <span className="text-primary">klienci?</span>
         </h2>
         <a
-          href="https://maps.app.goo.gl/XtrczQYYEUPBTkxC7"
+          href="https://www.google.com/maps/place/?q=place_id:ChIJu4R0E9E7F0cRoe-VxQCGb0g"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm text-muted-foreground transition hover:border-primary hover:text-foreground"
@@ -100,7 +100,7 @@ const Reviews = () => (
 
       <div className="mt-8 text-center">
         <a
-          href="https://maps.app.goo.gl/XtrczQYYEUPBTkxC7"
+          href="https://www.google.com/maps/place/?q=place_id:ChIJu4R0E9E7F0cRoe-VxQCGb0g"
           target="_blank"
           rel="noopener noreferrer"
           className="text-sm text-muted-foreground underline-offset-4 hover:text-primary hover:underline"
