@@ -10,6 +10,7 @@ import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
+import DesktopStickyBar from "@/components/DesktopStickyBar";
 import { useSeoMeta } from "@/hooks/useSeoMeta";
 
 const Index = () => {
@@ -35,6 +36,7 @@ const Index = () => {
       </main>
       <Footer />
       <FloatingCTA />
+      <DesktopStickyBar />
     </div>
   );
 };

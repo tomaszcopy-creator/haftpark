@@ -11,7 +11,7 @@ const features = [
   {
     icon: Package,
     title: "Już od 1 sztuki",
-    desc: "Realizujemy zamówienia od pojedynczych sztuk po duże serie hurtowe — bez minimalnego progu.",
+    desc: "Realizujemy zamówienia od pojedynczych sztuk po duże serie hurtowe — bez minimalnego progu. Ceny ustalamy indywidualnie po bezpłatnej wycenie.",
   },
   {
     icon: Monitor,

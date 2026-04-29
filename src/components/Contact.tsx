@@ -165,6 +165,9 @@ const Contact = () => {
                 <Button type="submit" size="lg" className="w-full" disabled={sending}>
                   {sending ? "Wysyłanie…" : "Wyślij wiadomość"}
                 </Button>
+                <p className="text-center text-xs text-muted-foreground">
+                  Odpowiadamy w ciągu 24h · Nie wysyłamy spamu
+                </p>
               </form>
             )}
           </motion.div>

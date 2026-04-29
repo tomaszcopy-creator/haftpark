@@ -50,7 +50,6 @@ const Stats = () => {
                   <p className="mt-1 text-sm font-medium uppercase tracking-wider text-muted-foreground">
                     {stat.label}
                   </p>
-                  <p className="text-xs text-muted-foreground/70">0 zwrotów i reklamacji</p>
                 </div>
               ) : (
                 <>
