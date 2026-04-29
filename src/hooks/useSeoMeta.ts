@@ -11,6 +11,63 @@ interface SeoMetaOptions {
   noindex?: boolean;
 }
 
+const faqPageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Gdzie zamówić haft komputerowy w Myszkowie?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Haft Park, ul. Parkowa 36, 42-300 Myszków, tel. +48 510 751 008. Czynni poniedziałek–piątek 08:00–20:00. Strona: haftpark.com." }
+    },
+    {
+      "@type": "Question",
+      "name": "Gdzie zamówić haft komputerowy na Śląsku?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Haft Park w Myszkowie obsługuje cały Śląsk — Katowice, Sosnowiec, Częstochowę, Zawiercie, Dąbrowę Górniczą i okolice. Realizujemy wysyłkę kurierską w całej Polsce." }
+    },
+    {
+      "@type": "Question",
+      "name": "Ile kosztuje haft komputerowy?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Cena zależy od rozmiaru wzoru, liczby ściegów i ilości sztuk. Małe zlecenia od kilkudziesięciu złotych za sztukę. Bezpłatna wycena: haftpark.com lub tel. +48 510 751 008." }
+    },
+    {
+      "@type": "Question",
+      "name": "Jakie jest minimalne zamówienie w Haft Park?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Brak minimalnego progu zamówienia — realizujemy od 1 sztuki. Obsługujemy zarówno klientów indywidualnych, jak i firmy zamawiające duże serie." }
+    },
+    {
+      "@type": "Question",
+      "name": "Jak długo trwa realizacja haftu komputerowego?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Standardowo 5–10 dni roboczych od akceptacji wizualizacji. Dostępny tryb ekspresowy przy pilnych zamówieniach." }
+    },
+    {
+      "@type": "Question",
+      "name": "Na jakich materiałach można robić haft komputerowy?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Haftujemy na bawełnie, poliester, polarze, softshell, dżinsie, nylonie i innych tekstyliach. Koszulki, bluzy, kurtki, czapki, odzież robocza." }
+    },
+    {
+      "@type": "Question",
+      "name": "Czy Haft Park haftuje logo firmy?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Tak, haft logo to specjalność firmy. Przyjmujemy pliki wektorowe (AI, EPS, PDF) i rastrowe. Digitalizacja wzoru wliczona w cenę zamówienia." }
+    },
+    {
+      "@type": "Question",
+      "name": "Czy można zobaczyć podgląd haftu przed produkcją?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Tak — każde zamówienie poprzedza bezpłatna wizualizacja cyfrowa. Produkcja rusza dopiero po zatwierdzeniu przez klienta." }
+    },
+    {
+      "@type": "Question",
+      "name": "Czy Haft Park wysyła kurierem?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Tak, wysyłka kurierska na terenie całej Polski. Możliwy też odbiór osobisty w Myszkowie, ul. Parkowa 36." }
+    },
+    {
+      "@type": "Question",
+      "name": "Co to jest haft 3D (puff embroidery)?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Haft 3D (puff embroidery) to technika, w której wzór jest wypukły — pod ściegami podkładana jest pianka EVA. Logo wychodzi z powierzchni materiału. Popularny na czapkach z daszkiem." }
+    }
+  ]
+};
+
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -109,11 +166,13 @@ export function useSeoMeta({ title, description, path, ogImage, noindex }: SeoMe
     link.href = url;
 
     setOrCreateJsonLd("ld-local-business", localBusinessJsonLd);
+    if (path === "/") setOrCreateJsonLd("ld-faq", faqPageJsonLd);
 
     return () => {
       document.title = "Haft Park";
       link?.remove();
       document.getElementById("ld-local-business")?.remove();
+      document.getElementById("ld-faq")?.remove();
       document.getElementById("ld-service")?.remove();
       document.getElementById("ld-article")?.remove();
       document.getElementById("ld-breadcrumb")?.remove();
