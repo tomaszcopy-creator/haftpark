@@ -43,7 +43,7 @@ const Hero = () => {
 
           <div className="hero-anim flex flex-col items-center gap-4 sm:flex-row sm:justify-center" style={{ animationDelay: "300ms" }}>
             <Button asChild size="lg" className="px-8 text-base">
-              <a href="#contact">Bezpłatna konsultacja</a>
+              <a href="#contact">Bezpłatna wycena w 24h</a>
             </Button>
             <Button asChild variant="outline" size="lg" className="px-8 text-base">
               <a href="tel:+48510751008">Zadzwoń: 510 751 008</a>
