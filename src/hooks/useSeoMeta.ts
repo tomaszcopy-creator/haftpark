@@ -28,7 +28,7 @@ const faqPageJsonLd = {
     {
       "@type": "Question",
       "name": "Ile kosztuje haft komputerowy?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Cena zależy od rozmiaru wzoru, liczby ściegów i ilości sztuk. Małe zlecenia od kilkudziesięciu złotych za sztukę. Bezpłatna wycena: haftpark.com lub tel. +48 510 751 008." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Małe logo od 3 zł za sztukę, standardowe logo na pierś ok. 10 zł, duże logo od 20 zł. Cena zależy od rozmiaru wzoru, liczby ściegów i wielkości serii. Bezpłatna wycena: haftpark.com lub tel. +48 510 751 008." }
     },
     {
       "@type": "Question",
