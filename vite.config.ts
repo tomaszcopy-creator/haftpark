@@ -52,12 +52,10 @@ export default defineConfig(({ mode }) => ({
           if (id.includes("node_modules/framer-motion")) {
             return "motion";
           }
-          // Merge all lazy-loaded subpages into one chunk
-          if (
-            id.includes("src/pages/") &&
-            !id.includes("src/pages/Index")
-          ) {
-            return "pages";
+          // Each page gets its own chunk — avoids preloading all pages on every visit
+          if (id.includes("src/pages/")) {
+            const match = id.match(/src\/pages\/([^/.]+)/);
+            if (match) return `page-${match[1].toLowerCase()}`;
           }
         },
       },

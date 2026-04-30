@@ -84,7 +84,7 @@
   stroke-linecap: round;
   stroke-dasharray: 251.3;
   stroke-dashoffset: 251.3;
-  animation: hp-hoop-draw 0.95s cubic-bezier(0.4, 0, 0.2, 1) 0.05s both;
+  animation: hp-hoop-draw 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s both;
 }
 .hp-loader__hoop-center {
   position: absolute;

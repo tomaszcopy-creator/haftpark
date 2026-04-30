@@ -25,12 +25,12 @@ const Loader = () => {
 
     const fadeTimer = setTimeout(() => {
       ref.current?.classList.add("hp-loader--out");
-    }, 1200);
+    }, 300);
 
     const unmountTimer = setTimeout(() => {
       sessionStorage.setItem(STORAGE_KEY, "1");
       setMounted(false);
-    }, 1500);
+    }, 600);
 
     return () => {
       clearTimeout(fadeTimer);
