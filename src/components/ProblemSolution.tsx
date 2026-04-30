@@ -1,5 +1,4 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useIsVisible } from "@/hooks/useIsVisible";
 import { XCircle, CheckCircle } from "lucide-react";
 
 const problems = [
@@ -17,27 +16,20 @@ const solutions = [
 ];
 
 const ProblemSolution = () => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [ref, inView] = useIsVisible<HTMLElement>({ margin: "-80px" });
 
   return (
     <section className="py-14 md:py-20" ref={ref}>
       <div className="container">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="mb-16 text-center text-3xl font-bold text-foreground md:text-4xl"
-        >
+        <h2 className={`sa sa-ysm ${inView ? "vis" : ""} mb-16 text-center text-3xl font-bold text-foreground md:text-4xl`}>
           Dlaczego firmy wybierają <span className="text-primary">Haft Park</span>?
-        </motion.h2>
+        </h2>
 
         <div className="mx-auto grid max-w-4xl grid-cols-1 gap-12 md:grid-cols-2">
           {/* Problems */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
+          <div
+            className={`sa sa-xl ${inView ? "vis" : ""}`}
+            style={{ transitionDelay: inView ? "200ms" : "0ms" }}
           >
             <h3 className="mb-6 text-lg font-semibold uppercase tracking-wider text-muted-foreground">
               Typowe problemy
@@ -50,13 +42,12 @@ const ProblemSolution = () => {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
           {/* Solutions */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.35 }}
+          <div
+            className={`sa sa-xr ${inView ? "vis" : ""}`}
+            style={{ transitionDelay: inView ? "350ms" : "0ms" }}
           >
             <h3 className="mb-6 text-lg font-semibold uppercase tracking-wider text-primary">
               Nasze rozwiązanie
@@ -69,7 +60,7 @@ const ProblemSolution = () => {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

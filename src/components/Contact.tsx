@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,6 +7,7 @@ import { MapPin, Phone, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
+import { useIsVisible } from "@/hooks/useIsVisible";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Podaj imię").max(100),
@@ -19,8 +19,7 @@ const contactSchema = z.object({
 type FormData = z.infer<typeof contactSchema>;
 
 const Contact = () => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [ref, inView] = useIsVisible<HTMLElement>({ margin: "-80px" });
   const { toast } = useToast();
 
   const [form, setForm] = useState<FormData>({ name: "", email: "", phone: "", message: "" });
@@ -95,29 +94,21 @@ const Contact = () => {
   return (
     <section id="contact" className="py-14 md:py-20" ref={ref}>
       <div className="container">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="mb-4 text-center text-3xl font-bold text-foreground md:text-4xl"
-        >
+        <h2 className={`sa sa-ysm ${inView ? "vis" : ""} mb-4 text-center text-3xl font-bold text-foreground md:text-4xl`}>
           Skontaktuj się <span className="text-primary">z nami</span>
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="mx-auto mb-14 max-w-md text-center text-muted-foreground"
+        </h2>
+        <p
+          className={`sa sa-ysm ${inView ? "vis" : ""} mx-auto mb-14 max-w-md text-center text-muted-foreground`}
+          style={{ transitionDelay: inView ? "100ms" : "0ms" }}
         >
           Bezpłatna konsultacja — napisz lub zadzwoń, a dobierzemy najlepsze rozwiązanie
-        </motion.p>
+        </p>
 
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 md:grid-cols-2">
           {/* Form */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
+          <div
+            className={`sa sa-xl ${inView ? "vis" : ""}`}
+            style={{ transitionDelay: inView ? "200ms" : "0ms" }}
           >
             {submitted ? (
               <div className="flex h-full items-center justify-center rounded-lg border border-border bg-card p-10 text-center">
@@ -173,14 +164,12 @@ const Contact = () => {
                 </p>
               </form>
             )}
-          </motion.div>
+          </div>
 
           {/* Info */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="space-y-8"
+          <div
+            className={`sa sa-xr ${inView ? "vis" : ""} space-y-8`}
+            style={{ transitionDelay: inView ? "300ms" : "0ms" }}
           >
             <div className="flex gap-4">
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
@@ -224,7 +213,7 @@ const Contact = () => {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

@@ -43,6 +43,15 @@
 }
 /* ── END HERO ANIMATIONS ─────────────────────────────────── */
 
+/* ── SCROLL ANIMATIONS (replaces framer-motion) ─────────── */
+.sa { opacity: 0; transition: opacity 0.5s ease, transform 0.5s ease; }
+.sa.vis { opacity: 1; transform: none !important; }
+.sa-y   { transform: translateY(30px); }
+.sa-ysm { transform: translateY(20px); }
+.sa-xl  { transform: translateX(-30px); }
+.sa-xr  { transform: translateX(30px); }
+/* ── END SCROLL ANIMATIONS ───────────────────────────────── */
+
 /* ── PAGE LOADER ─────────────────────────────────────────── */
 .hp-loader {
   position: fixed;

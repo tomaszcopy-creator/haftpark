@@ -4,8 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useIsVisible } from "@/hooks/useIsVisible";
 
 const faqs = [
   {
@@ -35,26 +34,18 @@ const faqs = [
 ];
 
 const FAQ = () => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [ref, inView] = useIsVisible<HTMLElement>({ margin: "-80px" });
 
   return (
     <section id="faq" className="bg-secondary/50 py-14 md:py-20" ref={ref}>
       <div className="container">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="mb-12 text-center text-3xl font-bold text-foreground md:text-4xl"
-        >
+        <h2 className={`sa sa-ysm ${inView ? "vis" : ""} mb-12 text-center text-3xl font-bold text-foreground md:text-4xl`}>
           Najczęściej zadawane <span className="text-primary">pytania</span>
-        </motion.h2>
+        </h2>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.15 }}
-          className="mx-auto max-w-2xl"
+        <div
+          className={`sa sa-ysm ${inView ? "vis" : ""} mx-auto max-w-2xl`}
+          style={{ transitionDelay: inView ? "150ms" : "0ms" }}
         >
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, i) => (
@@ -68,7 +59,7 @@ const FAQ = () => {
               </AccordionItem>
             ))}
           </Accordion>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

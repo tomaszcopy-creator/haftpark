@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-
+import { useIsVisible } from "@/hooks/useIsVisible";
 import bro from "@/assets/klienci/bro.webp";
 import solidis from "@/assets/klienci/solidis-pro.webp";
 import natalux from "@/assets/klienci/natalux.webp";
@@ -20,44 +19,35 @@ const clients = [
   { src: vipprint, alt: "VipPrint.pl", name: "VipPrint" },
 ];
 
-// Double the array for seamless infinite scroll
 const duplicated = [...clients, ...clients];
 
 const Clients = () => {
+  const [ref, inView] = useIsVisible<HTMLElement>({ margin: "-80px" });
+
   return (
-    <section className="border-t border-border/40 bg-muted/30 py-10 md:py-14">
+    <section className="border-t border-border/40 bg-muted/30 py-10 md:py-14" ref={ref}>
       <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-6 text-center"
-        >
+        <div className={`sa sa-ysm ${inView ? "vis" : ""} mb-6 text-center`}>
           <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary">
             Zaufali nam
           </p>
           <h2 className="font-display text-2xl font-bold text-foreground md:text-3xl">
             Obsługujemy firmy, agencje i klientów indywidualnych
           </h2>
-        </motion.div>
+        </div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.15 }}
-          className="mx-auto mb-12 max-w-2xl text-center text-base text-muted-foreground md:text-lg"
+        <p
+          className={`sa sa-ysm ${inView ? "vis" : ""} mx-auto mb-12 max-w-2xl text-center text-base text-muted-foreground md:text-lg`}
+          style={{ transitionDelay: inView ? "150ms" : "0ms" }}
         >
-          Realizujemy zamówienia hurtowe dla marek odzieżowych i agencji reklamowych, 
-          a&nbsp;także <span className="font-semibold text-foreground">przyjmujemy zlecenia już od&nbsp;1&nbsp;sztuki</span>. 
+          Realizujemy zamówienia hurtowe dla marek odzieżowych i agencji reklamowych,
+          a&nbsp;także <span className="font-semibold text-foreground">przyjmujemy zlecenia już od&nbsp;1&nbsp;sztuki</span>.
           Niezależnie od skali — dostajesz tę samą jakość i&nbsp;terminowość.
-        </motion.p>
+        </p>
       </div>
 
       {/* Infinite scroll marquee */}
       <div className="relative overflow-hidden">
-        {/* Fade edges */}
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-muted/30 to-transparent md:w-32" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-muted/30 to-transparent md:w-32" />
 

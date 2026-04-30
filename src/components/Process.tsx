@@ -1,5 +1,4 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useIsVisible } from "@/hooks/useIsVisible";
 import { MessageSquare, Cpu, Eye, Scissors } from "lucide-react";
 import konsultacjaImg from "@/assets/process/konsultacja.webp";
 import digitalizacjaImg from "@/assets/process/digitalizacja.webp";
@@ -34,39 +33,28 @@ const steps = [
 ];
 
 const Process = () => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [ref, inView] = useIsVisible<HTMLElement>({ margin: "-80px" });
 
   return (
     <section id="process" className="bg-secondary/50 py-14 md:py-20" ref={ref}>
       <div className="container">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="mb-4 text-center text-3xl font-bold text-foreground md:text-4xl"
-        >
+        <h2 className={`sa sa-ysm ${inView ? "vis" : ""} mb-4 text-center text-3xl font-bold text-foreground md:text-4xl`}>
           Jak wygląda <span className="text-primary">współpraca</span>?
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="mx-auto mb-16 max-w-lg text-center text-muted-foreground"
+        </h2>
+        <p
+          className={`sa sa-ysm ${inView ? "vis" : ""} mx-auto mb-16 max-w-lg text-center text-muted-foreground`}
+          style={{ transitionDelay: inView ? "100ms" : "0ms" }}
         >
           Cztery proste kroki od pomysłu do gotowego haftu
-        </motion.p>
+        </p>
 
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, i) => (
-            <motion.div
+            <div
               key={step.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
-              className="group relative overflow-hidden rounded-lg border border-border bg-card text-center"
+              className={`sa sa-y ${inView ? "vis" : ""} group relative overflow-hidden rounded-lg border border-border bg-card text-center`}
+              style={{ transitionDelay: inView ? `${150 + i * 100}ms` : "0ms" }}
             >
-              {/* Step image */}
               <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={step.image}
@@ -88,7 +76,7 @@ const Process = () => {
                 <h3 className="mb-2 text-lg font-semibold text-foreground">{step.title}</h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

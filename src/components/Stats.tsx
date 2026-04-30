@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
+import { useIsVisible } from "@/hooks/useIsVisible";
 
 const stats = [
   { value: 8, suffix: "", label: "Lat doświadczenia", icon: null },
@@ -29,20 +29,17 @@ const Counter = ({ target, suffix, inView }: { target: number; suffix: string; i
 };
 
 const Stats = () => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const [ref, inView] = useIsVisible<HTMLElement>({ margin: "-100px" });
 
   return (
     <section id="stats" className="border-y border-border bg-secondary/50 py-12 md:py-16" ref={ref}>
       <div className="container">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-3">
           {stats.map((stat, i) => (
-            <motion.div
+            <div
               key={stat.label}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="text-center"
+              className={`sa sa-y ${inView ? "vis" : ""} text-center`}
+              style={{ transitionDelay: inView ? `${i * 150}ms` : "0ms" }}
             >
               {stat.icon === "shield" ? (
                 <div className="flex flex-col items-center gap-1">
@@ -61,7 +58,7 @@ const Stats = () => {
                   </p>
                 </>
               )}
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
