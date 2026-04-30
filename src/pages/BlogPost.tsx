@@ -1,6 +1,20 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { useSeoMeta, useArticleJsonLd, useBreadcrumbJsonLd } from "@/hooks/useSeoMeta";
 import { motion } from "framer-motion";
+
+function renderText(text: string): React.ReactNode {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, i) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (!match) return part;
+    const [, label, href] = match;
+    const cls = "text-primary underline underline-offset-4 hover:text-primary/80 transition-colors";
+    if (href.startsWith("/")) {
+      return <Link key={i} to={href} className={cls}>{label}</Link>;
+    }
+    return <a key={i} href={href} className={cls} target="_blank" rel="noopener noreferrer">{label}</a>;
+  });
+}
 import { Phone, ArrowLeft, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
@@ -96,12 +110,12 @@ const BlogPost = () => {
                   case "h3":
                     return <h3 key={i} className="mt-8 mb-3 text-xl font-semibold text-foreground">{section.text}</h3>;
                   case "p":
-                    return <p key={i} className="mb-4 text-base leading-relaxed text-muted-foreground">{section.text}</p>;
+                    return <p key={i} className="mb-4 text-base leading-relaxed text-muted-foreground">{renderText(section.text ?? "")}</p>;
                   case "ul":
                     return (
                       <ul key={i} className="mb-6 ml-6 list-disc space-y-2">
                         {section.items?.map((item, j) => (
-                          <li key={j} className="text-base leading-relaxed text-muted-foreground">{item}</li>
+                          <li key={j} className="text-base leading-relaxed text-muted-foreground">{renderText(item)}</li>
                         ))}
                       </ul>
                     );

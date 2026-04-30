@@ -62,7 +62,7 @@ export const blogPosts: BlogPost[] = [
         "Liczba kolorów nici: każdy kolor wymaga osobnego oprogramowania sekwencji i przełączenia nici",
         "Rozmiar haftu: większy obszar wypełnienia to więcej ściegów i więcej czasu pracy specjalisty",
         "Małe napisy: tekst poniżej 5–6 mm wysokości wymaga specjalnych ściegów i szczególnej precyzji",
-        "Haft 3D (puff embroidery): wymaga dodatkowej pianki podkładowej i odmiennego podejścia do całej digitalizacji",
+        "[Haft 3D (puff embroidery)](/haft-3d): wymaga dodatkowej pianki podkładowej i odmiennego podejścia do całej digitalizacji",
         "Termin ekspresowy: część hafciarni pobiera dopłatę za pilną digitalizację w ciągu 24 godzin",
       ]},
 
@@ -83,7 +83,7 @@ export const blogPosts: BlogPost[] = [
 
       { type: "h2", text: "Digitalizacja wzoru do haftu — Haft Park Myszków i cały Śląsk" },
       { type: "p", text: "W Haft Park digitalizacja wykonywana jest przez doświadczonych specjalistów — każdy wzór trafia w ręce człowieka, nie algorytmu. Obsługujemy firmy z Myszkowa, Częstochowy, Katowic, Sosnowca, Dąbrowy Górniczej i całej Polski. Wysyłka materiałów do haftu i gotowych wyrobów odbywa się kurierem — nie musisz przyjeżdżać osobiście." },
-      { type: "p", text: "Specjalizujemy się w digitalizacji wzorów do haftu na polówkach, koszulach, czapkach, fartuchach, odzieży roboczej BHP i wielu innych rodzajach odzieży. Realizujemy zamówienia dla restauracji, hoteli, firm produkcyjnych, służby zdrowia i klubów sportowych. Jeśli masz logo, my zamienimy je w profesjonalny, trwały haft." },
+      { type: "p", text: "Specjalizujemy się w digitalizacji wzorów do haftu na polówkach, koszulach, [czapkach](/haft-na-czapkach), fartuchach, [odzieży roboczej](/haft-na-odziezy) BHP i wielu innych rodzajach odzieży. Realizujemy zamówienia dla restauracji, hoteli, firm produkcyjnych, służby zdrowia i klubów sportowych. Jeśli masz logo, my zamienimy je w profesjonalny, trwały haft." },
       { type: "p", text: "Zapraszamy do kontaktu — wyślij logo i opis zamówienia, a przygotujemy bezpłatną wycenę digitalizacji i haftu w ciągu 24 godzin." },
 
       { type: "h2", text: "Najczęściej zadawane pytania o digitalizację wzoru do haftu" },
@@ -124,7 +124,7 @@ export const blogPosts: BlogPost[] = [
       { type: "p", text: "W Haft Park odpowiadamy na zapytania w ciągu 24 godzin w dni robocze. Wycena jest bezpłatna i niezobowiązująca." },
 
       { type: "h2", text: "Krok 3: Digitalizacja wzoru" },
-      { type: "p", text: "Digitalizacja to przetłumaczenie Twojego logo na język maszyny hafciarskiej — tworzenie tzw. pliku punch (programu maszynowego). Specjalista od digitalizacji ręcznie lub półautomatycznie planuje każdy ścieg: kierunek, gęstość, rodzaj wypełnienia, kolejność kolorów." },
+      { type: "p", text: "Digitalizacja to przetłumaczenie Twojego logo na język maszyny hafciarskiej — tworzenie tzw. pliku punch (programu maszynowego). Specjalista od digitalizacji ręcznie lub półautomatycznie planuje każdy ścieg: kierunek, gęstość, rodzaj wypełnienia, kolejność kolorów. Więcej szczegółów znajdziesz w artykule [Digitalizacja wzoru do haftu — co to jest i ile kosztuje](/blog/digitalizacja-wzoru-do-haftu)." },
       { type: "p", text: "To jednorazowy koszt: w Haft Park wynosi on 80–150 zł zależnie od złożoności wzoru. Raz przygotowany plik maszynowy pozostaje w bazie i jest używany przy każdym kolejnym zamówieniu — nie płacisz za digitalizację dwa razy." },
       { type: "p", text: "Czas digitalizacji to zazwyczaj 1–2 dni robocze. W przypadku prostych wzorów (tekst, proste logo) może być krócej." },
 
@@ -156,7 +156,7 @@ export const blogPosts: BlogPost[] = [
       { type: "p", text: "Przykład: 30 polówek z haftowanym logo (wzór ok. 5×5 cm) — digitalizacja 100 zł + 30 × 14 zł = 520 zł netto. Przy kolejnym zamówieniu tych samych 30 sztuk płacisz już tylko 30 × 14 zł = 420 zł netto." },
 
       { type: "h2", text: "Jak zamówić haft komputerowy w Haft Park" },
-      { type: "p", text: "Haft Park to hafciarnia z Myszkowa obsługująca firmy z całego Śląska i Polski. Specjalizujemy się w hafcie komputerowym dla gastronomii, hotelarstwa, firm produkcyjnych i usługowych. Zamówienia realizujemy w całej Polsce — w tym dla klientów z Częstochowy, Katowic, Sosnowca i Dąbrowy Górniczej." },
+      { type: "p", text: "Haft Park to hafciarnia z Myszkowa obsługująca firmy z całego Śląska i Polski. Specjalizujemy się w [hafcie komputerowym na odzieży](/haft-na-odziezy) dla gastronomii, hotelarstwa, firm produkcyjnych i usługowych. Zamówienia realizujemy w całej Polsce — w tym dla klientów z Częstochowy, Katowic, Sosnowca i Dąbrowy Górniczej." },
       { type: "p", text: "Aby zamówić haft: wyślij logo i opis zamówienia na nasz adres e-mail lub przez formularz kontaktowy. Wrócimy z wyceną i wizualizacją w ciągu 24 godzin — bezpłatnie i bez zobowiązań." },
 
       { type: "h2", text: "Najczęściej zadawane pytania" },
@@ -210,7 +210,7 @@ export const blogPosts: BlogPost[] = [
       ]},
 
       { type: "h2", text: "Koszty — kiedy haft komputerowy jest opłacalny?" },
-      { type: "p", text: "Haft wymaga jednorazowego kosztu digitalizacji — przygotowania wzoru maszynowego. W Haft Park digitalizacja zaczyna się od 80–150 zł zależnie od złożoności projektu. To inwestycja jednorazowa — raz przygotowany wzór służy przy każdym kolejnym zamówieniu bez dodatkowych opłat." },
+      { type: "p", text: "Haft wymaga jednorazowego kosztu [digitalizacji wzoru](/blog/digitalizacja-wzoru-do-haftu) — przygotowania wzoru maszynowego. W Haft Park digitalizacja zaczyna się od 80–150 zł zależnie od złożoności projektu. To inwestycja jednorazowa — raz przygotowany wzór służy przy każdym kolejnym zamówieniu bez dodatkowych opłat." },
       { type: "p", text: "Koszt haftu na jednej sztuce to zazwyczaj 8–25 zł, zależnie od wielkości wzoru. Przy zamówieniach powyżej 50 sztuk cena jednostkowa spada o 20–30%. Nadruk sitodrukowy kosztuje 5–15 zł/szt., ale wymaga matryc (50–100 zł za kolor), co przy małych nakładach drastycznie podnosi koszt." },
       { type: "p", text: "Kluczowy jest koszt całkowity. Jeśli koszulka z nadrukiem wymaga wymiany co 3–4 miesiące, a ta z haftem służy 2–3 lata — haft jest 3–4 razy tańszy w skali roku. Firma z 20 pracownikami zamawiająca nadruki 3 razy rocznie (60 szt. × 45 zł = 2 700 zł/rok) kontra haft raz na 2 lata (20 szt. × 55 zł + 120 zł digitalizacja = 610 zł/rok)." },
 
@@ -224,7 +224,7 @@ export const blogPosts: BlogPost[] = [
       { type: "p", text: "Żadna z tych technologii nie dorównuje haftowi (500+ prań). Jedynym ograniczeniem haftu jest brak możliwości odwzorowania gradientów i fotorealistycznych grafik." },
 
       { type: "h2", text: "Haft na czapkach i naszywki — alternatywy do rozważenia" },
-      { type: "p", text: "Warto wiedzieć, że haft komputerowy to nie tylko odzież. Jeśli szukasz trwałego znakowania — sprawdź również haft na czapkach z daszkiem oraz naszywki haftowane na zamówienie. Oba rozwiązania oferują tę samą trwałość co haft na odzieży, często w niższej cenie jednostkowej." },
+      { type: "p", text: "Warto wiedzieć, że haft komputerowy to nie tylko odzież. Jeśli szukasz trwałego znakowania — sprawdź również [haft na czapkach z daszkiem](/haft-na-czapkach) oraz naszywki haftowane na zamówienie. Oba rozwiązania oferują tę samą trwałość co [haft na odzieży](/haft-na-odziezy), często w niższej cenie jednostkowej." },
 
       { type: "h2", text: "Haft komputerowy Myszków i okolice" },
       { type: "p", text: "Haft Park to hafciarnia z Myszkowa obsługująca klientów z całego Śląska i Polski. Realizujemy zamówienia dla firm z Częstochowy, Katowic, Sosnowca, Dąbrowy Górniczej i całego regionu. Wyślij projekt — wrócimy z wyceną w 24 godziny." },
