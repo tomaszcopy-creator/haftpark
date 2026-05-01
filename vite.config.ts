@@ -48,9 +48,20 @@ export default defineConfig(({ mode }) => ({
           ) {
             return "ui";
           }
-          // Animation
-          if (id.includes("node_modules/framer-motion")) {
-            return "motion";
+          // Layout: shell components shared by every page (Header, Footer, etc.)
+          // and hooks/lib/integrations — keeps page chunks small and independent
+          if (
+            id.includes("src/components/Header") ||
+            id.includes("src/components/Footer") ||
+            id.includes("src/components/FloatingCTA") ||
+            id.includes("src/components/DesktopStickyBar") ||
+            id.includes("src/components/CookieConsent") ||
+            id.includes("src/components/Loader") ||
+            id.includes("src/hooks/") ||
+            id.includes("src/lib/") ||
+            id.includes("src/integrations/")
+          ) {
+            return "layout";
           }
           // Each page gets its own chunk — avoids preloading all pages on every visit
           if (id.includes("src/pages/")) {
