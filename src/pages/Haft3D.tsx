@@ -115,10 +115,10 @@ const Haft3D = () => {
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="gap-2 px-8 text-base">
-                  <Link to="/#contact">
+                  <a href="/#contact">
                     <ArrowRight className="h-4 w-4" />
                     Wyślij projekt
-                  </Link>
+                  </a>
                 </Button>
               </div>
 
@@ -294,10 +294,10 @@ const Haft3D = () => {
                   510 751 008
                 </a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="gap-2 border-primary-foreground px-8 text-base text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                <Link to="/#contact">
+              <Button asChild size="lg" variant="outline" className="gap-2 border-primary-foreground bg-transparent px-8 text-base text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                <a href="/#contact">
                   Formularz kontaktowy
-                </Link>
+                </a>
               </Button>
             </div>
             <p
