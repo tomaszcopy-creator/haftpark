@@ -84,6 +84,13 @@ const localBusinessJsonLd = {
   },
   "image": "https://www.haftpark.com/hero-collage.webp",
   "priceRange": "$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "4",
+    "bestRating": "5",
+    "worstRating": "1",
+  },
   "areaServed": ["Myszków", "Zawiercie", "Częstochowa", "województwo śląskie", "Polska"],
   "sameAs": ["https://www.facebook.com/haftpark"],
   "address": {
@@ -262,4 +269,22 @@ export function useBreadcrumbJsonLd(items: BreadcrumbItem[]) {
     setOrCreateJsonLd("ld-breadcrumb", data);
     return () => { document.getElementById("ld-breadcrumb")?.remove(); };
   }, [items]);
+}
+
+interface FaqItem { q: string; a: string; }
+
+export function useFaqJsonLd(items: FaqItem[]) {
+  useEffect(() => {
+    const data = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": items.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": { "@type": "Answer", "text": item.a },
+      })),
+    };
+    setOrCreateJsonLd("ld-faq", data);
+    return () => { document.getElementById("ld-faq")?.remove(); };
+  }, []);
 }

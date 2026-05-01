@@ -1,5 +1,11 @@
-import { useSeoMeta, useServiceJsonLd, useBreadcrumbJsonLd } from "@/hooks/useSeoMeta";
+import { useSeoMeta, useServiceJsonLd, useBreadcrumbJsonLd, useFaqJsonLd } from "@/hooks/useSeoMeta";
 import { Phone, ArrowRight, HardHat, Trophy, Shirt, Gift, Medal, Tag, Layers, Cpu, Droplets, ShieldCheck, Info } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
@@ -14,6 +20,14 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+
+const faqs = [
+  { q: "Co to jest haft 3D (puff embroidery)?", a: "Haft 3D to technika, w której pod ściegami podkładana jest pianka EVA. Logo wychodzi z powierzchni materiału tworząc trójwymiarowy efekt wypukłości — stąd nazwa puff embroidery." },
+  { q: "Na jakich materiałach sprawdza się haft 3D?", a: "Najlepiej na czapkach z daszkiem z twardym panelem frontowym. Dobrze sprawdza się też na bluzach i kurtkach. Na miękkich materiałach (np. beanie) efekt 3D jest słabiej widoczny." },
+  { q: "Ile kosztuje haft 3D?", a: "Haft 3D jest droższy od płaskiego o ok. 20–30% ze względu na piankę EVA i specjalną digitalizację. Bezpłatna wycena: tel. +48 510 751 008 lub formularz na stronie." },
+  { q: "Jak duże może być logo w hafcie 3D?", a: "Optymalny zakres to 3×3 cm do 12×10 cm. Efekt 3D najlepiej wygląda przy prostych, grubych kształtach i dużych literach — cienkie linie poniżej 3 mm nie nadają się do tej techniki." },
+  { q: "Czy haft 3D jest trwały?", a: "Tak — pianka EVA jest wodoodporna i odporna na pranie. Efekt 3D utrzymuje się przez lata, tak samo jak standardowy haft płaski." },
+];
 
 const applications = [
   { icon: Trophy, title: "Czapki z daszkiem", desc: "Klasyka haftu 3D — wypukłe logo na panelu frontowym.", bestseller: true },
@@ -35,6 +49,7 @@ const Haft3D = () => {
   const [heroRef, heroInView] = useIsVisible<HTMLElement>({ margin: "-80px" });
   const [zastosRef, zastosInView] = useIsVisible<HTMLElement>({ margin: "-80px" });
   const [techRef, techInView] = useIsVisible<HTMLElement>({ margin: "-80px" });
+  const [faqRef, faqInView] = useIsVisible<HTMLElement>({ margin: "-80px" });
   const [ctaRef, ctaInView] = useIsVisible<HTMLElement>({ margin: "-80px" });
 
   useSeoMeta({
@@ -43,6 +58,7 @@ const Haft3D = () => {
     path: "/haft-3d",
   });
   useServiceJsonLd("Haft 3D na czapkach i odzieży");
+  useFaqJsonLd(faqs);
   useBreadcrumbJsonLd([
     { name: "Haft Park", url: "https://www.haftpark.com/" },
     { name: "Haft 3D", url: "https://www.haftpark.com/haft-3d" },
@@ -230,6 +246,28 @@ const Haft3D = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="border-y border-border bg-secondary/50 py-20 md:py-28" ref={faqRef}>
+          <div className="container">
+            <h2 className={`sa sa-ysm ${faqInView ? "vis" : ""} mb-4 text-center text-3xl font-bold text-foreground md:text-4xl`}>
+              Najczęściej zadawane <span className="text-primary">pytania</span>
+            </h2>
+            <div
+              className={`sa sa-ysm ${faqInView ? "vis" : ""} mx-auto max-w-2xl`}
+              style={{ transitionDelay: faqInView ? "150ms" : "0ms" }}
+            >
+              <Accordion type="single" collapsible className="w-full">
+                {faqs.map((faq, i) => (
+                  <AccordionItem key={i} value={`faq-${i}`}>
+                    <AccordionTrigger className="text-left text-base">{faq.q}</AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
           </div>
         </section>

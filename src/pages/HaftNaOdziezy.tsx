@@ -1,5 +1,11 @@
-import { useSeoMeta, useServiceJsonLd, useBreadcrumbJsonLd } from "@/hooks/useSeoMeta";
+import { useSeoMeta, useServiceJsonLd, useBreadcrumbJsonLd, useFaqJsonLd } from "@/hooks/useSeoMeta";
 import { Phone, ArrowRight, Shirt, HardHat, Trophy, Hotel, Tag, Gift, Leaf, Zap, Scissors as ScissorsIcon, Ruler, ShieldCheck, Sparkles, Palette, Target, Eye, CheckCircle, MessageSquare, Cpu } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
@@ -14,6 +20,14 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+
+const faqs = [
+  { q: "Na jakiej odzieży można zrobić haft komputerowy?", a: "Haftujemy na praktycznie każdym materiale tekstylnym — bawełnie, polarze, softshell, denimu, nylonie i poliester. Koszulki, bluzy, kurtki, kamizelki BHP, kombinezony, fartuchy, odzież robocza." },
+  { q: "Od ilu sztuk można zamówić haft na odzieży?", a: "Od 1 sztuki, bez minimalnego progu zamówienia. Obsługujemy zarówno klientów indywidualnych, jak i firmy zamawiające setki sztuk." },
+  { q: "Ile kosztuje haft logo na koszulce?", a: "Małe logo od 3 zł/szt., standardowe logo na pierś ok. 8–15 zł/szt. Cena zależy od rozmiaru wzoru i wielkości serii. Bezpłatna wycena online lub tel. +48 510 751 008." },
+  { q: "Czy mogę dostarczyć własną odzież do haftowania?", a: "Tak, haftujemy na odzieży dostarczonej przez klienta — koszulkach, bluzach, kurtkach, odzieży roboczej i każdym innym wyrobie tekstylnym." },
+  { q: "Jak długo trwa realizacja haftu na odzieży?", a: "Standardowo 5–10 dni roboczych od akceptacji wizualizacji. Dostępny tryb ekspresowy przy pilnych zamówieniach." },
+];
 
 const stats = [
   { value: "2000+", label: "Realizacji" },
@@ -60,6 +74,7 @@ const HaftNaOdziezy = () => {
   const [matRef, matInView] = useIsVisible<HTMLElement>({ margin: "-80px" });
   const [dlaczegoRef, dlaczegoInView] = useIsVisible<HTMLElement>({ margin: "-80px" });
   const [procesRef, procesInView] = useIsVisible<HTMLElement>({ margin: "-80px" });
+  const [faqRef, faqInView] = useIsVisible<HTMLElement>({ margin: "-80px" });
   const [ctaRef, ctaInView] = useIsVisible<HTMLElement>({ margin: "-80px" });
 
   useSeoMeta({
@@ -68,6 +83,7 @@ const HaftNaOdziezy = () => {
     path: "/haft-na-odziezy",
   });
   useServiceJsonLd("Haft na odzieży firmowej");
+  useFaqJsonLd(faqs);
   useBreadcrumbJsonLd([
     { name: "Haft Park", url: "https://www.haftpark.com/" },
     { name: "Haft na odzieży", url: "https://www.haftpark.com/haft-na-odziezy" },
@@ -270,6 +286,28 @@ const HaftNaOdziezy = () => {
                   <p className="text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="border-y border-border bg-secondary/50 py-20 md:py-28" ref={faqRef}>
+          <div className="container">
+            <h2 className={`sa sa-ysm ${faqInView ? "vis" : ""} mb-4 text-center text-3xl font-bold text-foreground md:text-4xl`}>
+              Najczęściej zadawane <span className="text-primary">pytania</span>
+            </h2>
+            <div
+              className={`sa sa-ysm ${faqInView ? "vis" : ""} mx-auto max-w-2xl`}
+              style={{ transitionDelay: faqInView ? "150ms" : "0ms" }}
+            >
+              <Accordion type="single" collapsible className="w-full">
+                {faqs.map((faq, i) => (
+                  <AccordionItem key={i} value={`faq-${i}`}>
+                    <AccordionTrigger className="text-left text-base">{faq.q}</AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
           </div>
         </section>
