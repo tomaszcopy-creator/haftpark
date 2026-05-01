@@ -52,6 +52,17 @@
 .sa-xr  { transform: translateX(30px); }
 /* ── END SCROLL ANIMATIONS ───────────────────────────────── */
 
+/* ── GALLERY ANIMATIONS (Realizacje) ────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+/* ── END GALLERY ANIMATIONS ──────────────────────────────── */
+
 /* ── PAGE LOADER ─────────────────────────────────────────── */
 .hp-loader {
   position: fixed;

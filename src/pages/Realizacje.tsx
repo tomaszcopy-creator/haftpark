@@ -1,8 +1,7 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useSeoMeta, useBreadcrumbJsonLd } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 
 import ewcia from "@/assets/realizacje/Ewcia.webp";
@@ -39,9 +38,22 @@ const Realizacje = () => {
     { name: "Haft Park", url: "https://www.haftpark.com/" },
     { name: "Realizacje", url: "https://www.haftpark.com/realizacje" },
   ]);
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
-  const close = useCallback(() => setSelectedIndex(null), []);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [lightboxVisible, setLightboxVisible] = useState(false);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const open = useCallback((i: number) => {
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    setSelectedIndex(i);
+    requestAnimationFrame(() => setLightboxVisible(true));
+  }, []);
+
+  const close = useCallback(() => {
+    setLightboxVisible(false);
+    closeTimerRef.current = setTimeout(() => setSelectedIndex(null), 200);
+  }, []);
+
   const prev = useCallback(
     () => setSelectedIndex((i) => (i !== null ? (i - 1 + gallery.length) % gallery.length : null)),
     []
@@ -62,13 +74,8 @@ const Realizacje = () => {
     return () => document.removeEventListener("keydown", handler);
   }, [selectedIndex, close, prev, next]);
 
-  // Lock body scroll when lightbox open
   useEffect(() => {
-    if (selectedIndex !== null) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = selectedIndex !== null ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [selectedIndex]);
 
@@ -87,15 +94,17 @@ const Realizacje = () => {
           {/* Masonry gallery */}
           <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 xl:columns-4">
             {gallery.map((item, i) => (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: i * 0.07 }}
                 className="mb-4 break-inside-avoid"
+                style={{
+                  opacity: 1,
+                  animation: `fadeInUp 0.4s ease both`,
+                  animationDelay: `${i * 60}ms`,
+                }}
               >
                 <button
-                  onClick={() => setSelectedIndex(i)}
+                  onClick={() => open(i)}
                   className="group relative block w-full overflow-hidden rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                 >
                   <img
@@ -110,7 +119,7 @@ const Realizacje = () => {
                     <ZoomIn className="h-8 w-8 text-background opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   </div>
                 </button>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -118,60 +127,47 @@ const Realizacje = () => {
       <Footer />
 
       {/* Lightbox */}
-      <AnimatePresence>
-        {selectedIndex !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-background/90 backdrop-blur-sm"
+      {selectedIndex !== null && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-background/90 backdrop-blur-sm transition-opacity duration-200"
+          style={{ opacity: lightboxVisible ? 1 : 0 }}
+          onClick={close}
+        >
+          <button
             onClick={close}
+            className="absolute right-4 top-4 z-10 rounded-full bg-muted p-2 text-foreground transition-colors hover:bg-muted-foreground/20"
           >
-            {/* Close */}
-            <button
-              onClick={close}
-              className="absolute right-4 top-4 z-10 rounded-full bg-muted p-2 text-foreground transition-colors hover:bg-muted-foreground/20"
-            >
-              <X className="h-6 w-6" />
-            </button>
+            <X className="h-6 w-6" />
+          </button>
 
-            {/* Prev */}
-            <button
-              onClick={(e) => { e.stopPropagation(); prev(); }}
-              className="absolute left-4 z-10 rounded-full bg-muted p-2 text-foreground transition-colors hover:bg-muted-foreground/20"
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </button>
+          <button
+            onClick={(e) => { e.stopPropagation(); prev(); }}
+            className="absolute left-4 z-10 rounded-full bg-muted p-2 text-foreground transition-colors hover:bg-muted-foreground/20"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
 
-            {/* Next */}
-            <button
-              onClick={(e) => { e.stopPropagation(); next(); }}
-              className="absolute right-4 z-10 rounded-full bg-muted p-2 text-foreground transition-colors hover:bg-muted-foreground/20"
-            >
-              <ChevronRight className="h-6 w-6" />
-            </button>
+          <button
+            onClick={(e) => { e.stopPropagation(); next(); }}
+            className="absolute right-4 z-10 rounded-full bg-muted p-2 text-foreground transition-colors hover:bg-muted-foreground/20"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
 
-            {/* Image */}
-            <motion.img
-              key={selectedIndex}
-              src={gallery[selectedIndex].src}
-              alt={gallery[selectedIndex].alt}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.2 }}
-              onClick={(e) => e.stopPropagation()}
-              className="max-h-[85vh] max-w-[90vw] rounded-lg object-contain"
-            />
+          <img
+            key={selectedIndex}
+            src={gallery[selectedIndex].src}
+            alt={gallery[selectedIndex].alt}
+            onClick={(e) => e.stopPropagation()}
+            className="max-h-[85vh] max-w-[90vw] rounded-lg object-contain"
+            style={{ animation: "fadeInScale 0.2s ease both" }}
+          />
 
-            {/* Counter */}
-            <span className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-muted-foreground">
-              {selectedIndex + 1} / {gallery.length}
-            </span>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          <span className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-muted-foreground">
+            {selectedIndex + 1} / {gallery.length}
+          </span>
+        </div>
+      )}
     </div>
   );
 };

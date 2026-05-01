@@ -1,6 +1,6 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { useSeoMeta, useArticleJsonLd, useBreadcrumbJsonLd } from "@/hooks/useSeoMeta";
-import { motion } from "framer-motion";
+import { useIsVisible } from "@/hooks/useIsVisible";
 
 function renderText(text: string): React.ReactNode {
   const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
@@ -30,15 +30,10 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-const fadeUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-};
-
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? getPostBySlug(slug) : undefined;
+  const [ref, inView] = useIsVisible<HTMLElement>({ margin: "-80px" });
 
   useSeoMeta({
     title: post?.metaTitle ?? "Blog | Haft Park",
@@ -87,22 +82,28 @@ const BlogPost = () => {
           </Breadcrumb>
         </div>
 
-        <article className="py-16 md:py-24">
+        <article className="py-16 md:py-24" ref={ref}>
           <div className="container max-w-3xl">
-            <motion.div {...fadeUp} transition={{ duration: 0.5 }} className="mb-3 flex items-center gap-2 text-sm font-medium text-muted-foreground">
+            <div className={`sa sa-ysm ${inView ? "vis" : ""} mb-3 flex items-center gap-2 text-sm font-medium text-muted-foreground`}>
               <CalendarDays className="h-4 w-4" />
               {new Date(post.date).toLocaleDateString("pl-PL", {
                 day: "numeric",
                 month: "long",
                 year: "numeric",
               })}
-            </motion.div>
+            </div>
 
-            <motion.h1 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="mb-10 text-3xl font-bold leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl">
+            <h1
+              className={`sa sa-ysm ${inView ? "vis" : ""} mb-10 text-3xl font-bold leading-tight tracking-tight text-foreground md:text-4xl lg:text-5xl`}
+              style={{ transitionDelay: inView ? "100ms" : "0ms" }}
+            >
               {post.title}
-            </motion.h1>
+            </h1>
 
-            <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="prose prose-lg max-w-none">
+            <div
+              className={`sa sa-ysm ${inView ? "vis" : ""} prose prose-lg max-w-none`}
+              style={{ transitionDelay: inView ? "200ms" : "0ms" }}
+            >
               {post.content.map((section, i) => {
                 switch (section.type) {
                   case "h2":
@@ -123,10 +124,13 @@ const BlogPost = () => {
                     return null;
                 }
               })}
-            </motion.div>
+            </div>
 
             {/* CTA */}
-            <motion.div {...fadeUp} transition={{ duration: 0.5, delay: 0.3 }} className="mt-16 rounded-lg border border-border bg-primary p-8 text-center md:p-12">
+            <div
+              className={`sa sa-ysm ${inView ? "vis" : ""} mt-16 rounded-lg border border-border bg-primary p-8 text-center md:p-12`}
+              style={{ transitionDelay: inView ? "300ms" : "0ms" }}
+            >
               <h2 className="mb-3 text-2xl font-bold text-primary-foreground md:text-3xl">
                 Potrzebujesz haftu dla swojej firmy?
               </h2>
@@ -144,7 +148,7 @@ const BlogPost = () => {
                   <Link to="/#contact">Formularz kontaktowy</Link>
                 </Button>
               </div>
-            </motion.div>
+            </div>
 
             <div className="mt-10">
               <Button asChild variant="ghost" className="gap-2">

@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { useSeoMeta, useBreadcrumbJsonLd } from "@/hooks/useSeoMeta";
-import { motion } from "framer-motion";
 import { ArrowRight, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 import { blogPosts } from "@/data/blogPosts";
+import { useIsVisible } from "@/hooks/useIsVisible";
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -16,13 +16,9 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-const fadeUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-};
-
 const Blog = () => {
+  const [ref, inView] = useIsVisible<HTMLElement>({ margin: "-80px" });
+
   useSeoMeta({
     title: "Blog o hafcie komputerowym | Haft Park",
     description: "Poradniki, porównania i nowości ze świata haftu komputerowego. Dowiedz się, jak wybrać najlepszą metodę znakowania odzieży dla Twojej firmy.",
@@ -53,25 +49,30 @@ const Blog = () => {
           </Breadcrumb>
         </div>
 
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-24" ref={ref}>
           <div className="container">
-            <motion.p {...fadeUp} transition={{ duration: 0.5 }} className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+            <p className={`sa sa-ysm ${inView ? "vis" : ""} mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-primary`}>
               Blog · Haft Park
-            </motion.p>
-            <motion.h1 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="mb-6 text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
+            </p>
+            <h1
+              className={`sa sa-ysm ${inView ? "vis" : ""} mb-6 text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl`}
+              style={{ transitionDelay: inView ? "100ms" : "0ms" }}
+            >
               Wiedza o <span className="text-primary">hafcie komputerowym</span>
-            </motion.h1>
-            <motion.p {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="mb-16 max-w-lg text-lg leading-relaxed text-muted-foreground">
+            </h1>
+            <p
+              className={`sa sa-ysm ${inView ? "vis" : ""} mb-16 max-w-lg text-lg leading-relaxed text-muted-foreground`}
+              style={{ transitionDelay: inView ? "200ms" : "0ms" }}
+            >
               Poradniki, porównania i praktyczne wskazówki od profesjonalistów.
-            </motion.p>
+            </p>
 
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {blogPosts.map((post, i) => (
-                <motion.article
+                <article
                   key={post.slug}
-                  {...fadeUp}
-                  transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
-                  className="group flex flex-col rounded-lg border border-border bg-card overflow-hidden"
+                  className={`sa sa-y ${inView ? "vis" : ""} group flex flex-col rounded-lg border border-border bg-card overflow-hidden`}
+                  style={{ transitionDelay: inView ? `${200 + i * 80}ms` : "0ms" }}
                 >
                   <div className="flex flex-1 flex-col p-6">
                     <div className="mb-3 flex items-center gap-2 text-xs font-medium text-muted-foreground">
@@ -95,7 +96,7 @@ const Blog = () => {
                       </Link>
                     </Button>
                   </div>
-                </motion.article>
+                </article>
               ))}
             </div>
           </div>
