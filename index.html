@@ -18,6 +18,10 @@
       h1,h2,h3,h4,h5,h6{font-family:'Playfair Display',ui-serif,Georgia,serif}
       img,video{max-width:100%;height:auto;display:block}
       #root{min-height:100vh}
+      /* Inline loader — visible instantly, before any JS loads */
+      #app-loader{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:hsl(0 0% 99%);transition:opacity .25s ease}
+      #app-loader>span{display:block;width:72px;height:72px;border:3px solid hsl(0 0% 90%);border-top-color:hsl(38 67% 54%);border-radius:50%;animation:ld-spin .7s linear infinite}
+      @keyframes ld-spin{to{transform:rotate(360deg)}}
     </style>
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MK2BXZT9GN"></script>
@@ -91,6 +95,7 @@
 </head>
 
   <body>
+    <div id="app-loader" aria-hidden="true"><span></span></div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
