@@ -16,6 +16,76 @@ export interface BlogSection {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "haft-na-polowkach-firmowych",
+    title: "Haft na polówkach firmowych — wszystko co musisz wiedzieć [Poradnik 2026]",
+    metaTitle: "Haft na polówkach firmowych — cena i jak zamówić | Haft Park",
+    metaDescription: "Haft na polówkach firmowych — ceny, miejsca aplikacji i porady. Zamów z Haft Park Myszków i dopasuj logo do Twojej marki. Wycena w 24h bezpłatnie!",
+    excerpt: "Polówka z haftowanym logo to jeden z najpopularniejszych sposobów na profesjonalną odzież firmową. Dowiedz się, gdzie umieścić haft, jaki materiał wybrać i ile kosztuje haft na polówkach w 2026 roku.",
+    date: "2026-05-03",
+    content: [
+      { type: "p", text: "Haft na polówkach firmowych to dziś standard w dziesiątkach branż — od gastronomii i hotelarstwa po budownictwo, medycynę i biura. Elegancka polówka z wyhaftowanym logo buduje spójny wizerunek firmy, a trwały haft komputerowy sprawia, że logo pozostaje czytelne przez setki prań. Ten poradnik wyjaśnia wszystko: od wyboru materiału, przez rozmieszczenie wzoru i koszty, aż po to, jak zamówić haft na polówkach w małej i dużej ilości." },
+
+      { type: "h2", text: "Dlaczego polówka z haftem to standard odzieży firmowej?" },
+      { type: "p", text: "Polówki zajmują wyjątkowe miejsce w odzieży firmowej — są zarazem eleganckie i funkcjonalne. W odróżnieniu od zwykłej koszulki t-shirt, polówka z kołnierzykiem daje bardziej profesjonalny wygląd, a jednocześnie jest wygodniejsza niż koszula. Dlatego restauracje, hotele, sklepy, serwisy techniczne i biura wybierają polówki z haftowanym logo jako codzienny standard odzieży pracowniczej." },
+      { type: "p", text: "Haft komputerowy na polówkach to zdecydowanie najlepsza metoda znakowania. W porównaniu do nadruku termotransferowego haft wytrzymuje ponad 500 cykli prania — bez blaknięcia, pękania ani odklejania. Logo pozostaje wyraźne i estetyczne przez całą długość życia polówki. Więcej o różnicach możesz przeczytać w artykule [Haft komputerowy czy nadruk — co wybrać dla firmy?](/blog/haft-komputerowy-vs-nadruk)." },
+      { type: "h3", text: "Polówka z haftem — wizerunek i identyfikacja marki" },
+      { type: "p", text: "Jednolite polówki z logo to nie tylko estetyka — to narzędzie budowania marki i identyfikacji pracowników. Klient wchodzący do restauracji czy salonu od razu wie, kto jest personelem. Haft, w odróżnieniu od nadruku, jest trójwymiarowy i elegancki — logo wyhaftowane na polówce kojarzy się z jakością i solidnością firmy. To subtelna, ale realna różnica w postrzeganiu marki przez klientów i kontrahentów." },
+
+      { type: "h2", text: "Gdzie umieścić haft na polówkach firmowych?" },
+      { type: "p", text: "Prawidłowe rozmieszczenie logo na polówce to jedna z pierwszych decyzji przy składaniu zamówienia. Możliwości jest wiele — oto najpopularniejsze miejsca haftu na polówkach:" },
+      { type: "ul", items: [
+        "Lewa pierś (serce) — klasyczne miejsce na logo firmowe. Rozmiar haftu zazwyczaj 5–10 cm szerokości. To najczęstszy wybór dla logotypów i nazw firm.",
+        "Prawa pierś — idealna do dodatkowego tekstu: imię pracownika, stanowisko lub hasło marki.",
+        "Środek piersi — większy obszar, świetny dla bardziej rozbudowanych wzorów lub logo z długą nazwą.",
+        "Rękaw — dodatkowe miejsce na logo, flagę, numer działu lub napis. Sprawdza się jako uzupełnienie haftu na piersi.",
+        "Kołnierzyk lub placket — dyskretny haft nazwy lub logo na kołnierzyku to elegancki detal dla marek premium.",
+        "Plecy — dla firm wymagających dużej widoczności: serwisy techniczne, ochrona, ekipy remontowe.",
+      ]},
+      { type: "p", text: "Standardowe zamówienie to haft na lewej piersi z rozmiarem wzoru 7–9 cm szerokości. Przy zamówieniu możesz wybrać kilka miejsc jednocześnie — cena każdego dodatkowego miejsca haftu jest naliczana osobno." },
+
+      { type: "h2", text: "Jak wybrać polówkę do haftu komputerowego?" },
+      { type: "p", text: "Nie każda polówka nadaje się jednakowo dobrze do haftu. Wybór odpowiedniego modelu ma wpływ na estetykę gotowego logo, trwałość haftu i komfort użytkowania przez pracowników." },
+      { type: "h3", text: "Materiał i gramatura polówki do haftu" },
+      { type: "p", text: "Najlepiej haftuje się na bawełnie i mieszankach bawełna–poliester o gramaturze 200–230 g/m². Taki materiał jest wystarczająco zwięzły, aby ściegi nie wchodziły w tkaninę i dobrze utrzymywały kształt. Polówki piqué (ze strukturalnym splotem w kratkę) to klasyczny wybór — ich faktura idealnie stabilizuje haft." },
+      { type: "p", text: "Polówki techniczne (sportowe, oddychające) z poliestru również dobrze przyjmują haft — szczególnie popularne w branży sportowej i gastronomii. Modele z dużą zawartością elastanu lub z bardzo delikatnej dzianiny wymagają dodatkowej podkładki podczas haftu, ale przy odpowiedniej technice dają dobry efekt. Gramatura poniżej 170 g/m² może być problematyczna — cienki materiał bardziej się marszczy przy igłach maszyny." },
+      { type: "p", text: "Jeśli nie jesteś pewien, czy Twoja polówka nadaje się do haftu — wyślij próbkę. W Haft Park bezpłatnie ocenimy materiał i doradzimy optymalne parametry haftu przed realizacją zamówienia." },
+
+      { type: "h2", text: "Ile kosztuje haft na polówkach firmowych?" },
+      { type: "p", text: "Cena haftu na polówkach zależy od kilku czynników. Oto co składa się na końcowy kosztorys:" },
+      { type: "ul", items: [
+        "Digitalizacja wzoru (jednorazowo): 80–150 zł — opłata za przygotowanie pliku maszynowego z Twojego logo. Koszt jednorazowy — przy kolejnych zamówieniach nie płacisz za digitalizację ponownie.",
+        "Haft na jednej polówce: 8–18 zł/szt. — zależnie od rozmiaru wzoru (liczby ściegów) i nakładu.",
+        "Rabaty ilościowe: przy 20+ szt. cena niższa o ok. 15%; przy 50+ szt. rabat rzędu 25–30%.",
+        "Każde dodatkowe miejsce haftu na tej samej polówce: 6–12 zł.",
+      ]},
+      { type: "p", text: "Przykładowy kosztorys: 30 polówek z haftowanym logo na lewej piersi (wzór ok. 8×5 cm) — digitalizacja 100 zł + 30 × 14 zł = łącznie 520 zł netto. Przy kolejnym zamówieniu tej samej ilości płacisz już tylko 420 zł netto — bez kosztów digitalizacji. Więcej o procesie i kosztach przeczytasz w artykule [Digitalizacja wzoru do haftu — co to jest i ile kosztuje](/blog/digitalizacja-wzoru-do-haftu)." },
+      { type: "p", text: "Cena haftu nie obejmuje zazwyczaj zakupu samych polówek. Możesz dostarczyć własne polówki do haftu lub zamówić je razem z usługą haftu — w Haft Park pomożemy dobrać model pasujący do potrzeb Twojej branży i kolorystyki marki." },
+
+      { type: "h2", text: "Haft na polówkach dla różnych branż" },
+      { type: "p", text: "Polówki z haftowanym logo są popularne niemal w każdej branży, jednak potrzeby poszczególnych sektorów nieco się różnią pod kątem wymagań co do trwałości, kolorystyki i miejsca haftu." },
+      { type: "h3", text: "Gastronomia i hotelarstwo" },
+      { type: "p", text: "Kelnerzy, barmani, recepcjoniści — polówki z haftowanym logo to absolutny standard w restauracjach, hotelach i kawiarniach. Ze względu na codzienne, intensywne pranie często w temperaturze 60°C, haft komputerowy jest jedyną sensowną metodą znakowania. Nadruki nie wytrzymają nawet tygodniowego użytkowania w takich warunkach. Dla gastronomii popularne są polówki ciemnych kolorów z kontrastowym haftowanym logo, co ukrywa ewentualne plamy i zachowuje elegancki wygląd przez wiele godzin zmiany." },
+      { type: "h3", text: "Budownictwo i serwisy techniczne" },
+      { type: "p", text: "Pracownicy na budowie, elektrycy, instalatorzy i serwisanci noszą polówki z logo zarówno w biurze, jak i w terenie u klienta. Tu liczy się trwałość haftu na polówkach w wymagających warunkach, a wyraźne logo firmy na lewej piersi lub plecach to jedyna identyfikacja pracownika na placu budowy czy serwisie. Polówki techniczne z poliestru lub mieszanek oddychających dobrze znoszą pracę fizyczną i częste pranie." },
+      { type: "h3", text: "Biura, kancelarie i handel" },
+      { type: "p", text: "W środowiskach biurowych polówka z haftowanym logo to elegancki kompromis między koszulą a koszulką. Banki, kancelarie prawne, działy obsługi klienta, salony samochodowe i showroomy — wszędzie tam, gdzie liczy się zarówno reprezentacyjność, jak i wygoda. W tych przypadkach haft powinien być precyzyjny i elegancki, a kolory nici wiernie oddawać palette barw marki." },
+
+      { type: "h2", text: "Haft na polówkach firmowych w Haft Park — Myszków i cały Śląsk" },
+      { type: "p", text: "Haft Park to hafciarnia komputerowa z Myszkowa obsługująca firmy z całego Śląska i Polski. Realizujemy zamówienia haftu na polówkach dla firm z Częstochowy, Katowic, Sosnowca, Dąbrowy Górniczej, Zawiercia i okolic — a dzięki wysyłce kurierskiej obsługujemy klientów z całego kraju. Nie musisz przyjeżdżać osobiście: odzież wysyłasz kurierem, a gotowe polówki z haftowanym logo wracają pod wskazany adres." },
+      { type: "p", text: "Każde zamówienie traktujemy indywidualnie: od oceny pliku graficznego przez digitalizację wzoru, aż po realizację haftu i kontrolę jakości gotowych sztuk. Możesz zamówić [haft na odzieży firmowej](/haft-na-odziezy) od 1 sztuki — bez minimalnego progu. Wyceną i wizualizacją odpowiadamy w ciągu 24 godzin. Wyślij logo i opis zamówienia, a my zajmiemy się resztą." },
+
+      { type: "h2", text: "Najczęściej zadawane pytania o haft na polówkach firmowych" },
+      { type: "h3", text: "Czy mogę zamówić haft na polówkach w małej ilości?" },
+      { type: "p", text: "Tak — w Haft Park przyjmujemy zamówienia od 1 sztuki. Przy małych nakładach (1–5 szt.) cena jednostkowa haftu jest wyższa, ale nie obowiązuje żaden próg minimalny. Rabaty ilościowe zaczynają się od 20 sztuk. Digitalizacja wzoru to koszt jednorazowy — niezależnie od tego, czy zamawiasz 1 czy 100 sztuk." },
+      { type: "h3", text: "Jak długo czekam na polówki z haftowanym logo?" },
+      { type: "p", text: "Standardowy czas realizacji to 5–10 dni roboczych od akceptacji wizualizacji. Przy zamówieniach do 20 sztuk zazwyczaj 3–5 dni roboczych. W Haft Park realizujemy też zamówienia ekspresowe — skontaktuj się, jeśli potrzebujesz polówek z haftem na konkretny termin czy wydarzenie firmowe." },
+      { type: "h3", text: "Czy mogę dostarczyć własne polówki do haftu?" },
+      { type: "p", text: "Tak. Możesz przesłać własne polówki kurierem — wyhaftujemy logo i odeślemy gotowe sztuki. To popularne rozwiązanie, gdy masz już konkretny model polówki lub zakupiłeś odzież u innego dostawcy. Ważne, żeby polówki były nowe lub w dobrym stanie technicznym." },
+      { type: "h3", text: "Ile kolorów nici może mieć haft na polówce?" },
+      { type: "p", text: "Haft komputerowy obsługuje do kilkunastu kolorów nici w jednym wzorze, choć większość logotypów ma 2–4 kolory. Na cenę haftu wpływa przede wszystkim liczba ściegów (wielkość wzoru), a nie liczba kolorów. Przy zamówieniu dobieramy kolory nici jak najbliższe oryginalnym barwom Twojego logo, korzystając z palet Madeira lub Ariadna." },
+    ],
+  },
+  {
     slug: "digitalizacja-wzoru-do-haftu",
     title: "Digitalizacja wzoru do haftu — co to jest i ile kosztuje [Poradnik 2026]",
     metaTitle: "Digitalizacja wzoru do haftu — cena i proces | Haft Park",

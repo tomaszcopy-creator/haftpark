@@ -7,12 +7,12 @@ Rytm: co tydzień | Ostatnia aktualizacja: 2026-04-13
 | 2026-04-05 | haft-komputerowy-vs-nadruk | Haft komputerowy czy nadruk — co wybrać dla firmy? |
 | 2026-04-19 | jak-zamowic-haft-komputerowy | Jak zamówić haft komputerowy — poradnik krok po kroku |
 | 2026-04-26 | digitalizacja-wzoru-do-haftu | Digitalizacja wzoru do haftu — co to jest i ile kosztuje |
+| 2026-05-03 | haft-na-polowkach-firmowych | Haft na polówkach firmowych — wszystko co musisz wiedzieć |
 
 ## Kolejka (priorytet SEO)
 
 | Nr | Proponowana data | Slug | Tytuł | Fraza główna | Priorytet |
 |----|-----------------|------|-------|-------------|-----------|
-| 3 | 2026-05-04 | haft-na-polowkach-firmowych | Haft na polówkach firmowych — wszystko co musisz wiedzieć | haft na polówkach | WYSOKI |
 | 4 | 2026-05-11 | haft-komputerowy-dla-gastronomii | Haft komputerowy dla gastronomii — fartuchy, polówki, uniformy | haft na odzieży gastronomicznej | WYSOKI |
 | 5 | 2026-05-18 | haft-3d-na-czapkach | Haft 3D na czapkach — czym się różni i kiedy warto wybrać | haft 3D na czapkach | ŚREDNI |
 | 6 | 2026-05-25 | naszywki-haftowane-na-zamowienie | Naszywki haftowane na zamówienie — kompletny poradnik | naszywki haftowane na zamówienie | WYSOKI |
